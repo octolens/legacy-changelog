@@ -1,9 +1,11 @@
 import { defaultPx } from "lib/utils/default-container-px";
 import { FooterTitle } from "components/core/footer/footer-title";
 import { FooterLink } from "components/core/footer/footer-link";
+import { FooterSocial } from "./footer-social";
 import {
   Box,
-  chakra,
+  Text,
+  Flex,
   Container,
   ContainerProps,
   Grid,
@@ -11,6 +13,7 @@ import {
   Image,
   VStack,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 const gap = [2, 2, 8];
 
@@ -31,149 +34,128 @@ export default function Footer(props: Props) {
         ]}
       >
         <GridItem gridArea="logo">
-          <Box flexShrink={0}>
-            <Image
-              src="/june-logo-small.svg"
-              alt="june"
-              width={68}
-              height={68}
-              htmlWidth={68}
-              htmlHeight={68}
-            />
-          </Box>
+          <VStack align="start" spacing={gap}>
+            <Box flexShrink={0}>
+              <Image
+                src="/crowd-dev-logo-small.svg"
+                alt="crowd.dev logo"
+                width={100}
+              />
+            </Box>
+            <Text fontSize="sm" color="gray.500">
+              An open-source suite of community and data tools built to unlock community-led growth for developer tools.
+            </Text>
+            <Flex align="center" w="100%">
+              <FooterSocial platform="linkedin" />
+              <FooterSocial platform="twitter" />
+              <FooterSocial platform="github" />
+              <FooterSocial platform="discord" />
+            </Flex>
+          </VStack>
         </GridItem>
         <GridItem gridArea="solution">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Explore</FooterTitle>
+            <FooterTitle>Product</FooterTitle>
             <FooterLink
-              title="Overview"
-              type="external"
-              href={process.env.NEXT_PUBLIC_MARKETING_HOST}
+              title="Changelog"
+              href="/"
             />
             <FooterLink
               title="Pricing"
               type="external"
               href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
             />
-            <FooterLink title="Changelog" href="/" />
-            <FooterLink title="Widget for iOS" type="external" href="https://widgets.june.so/" />
+            <FooterLink
+              title="Eagle Eye"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/eagle-eye`}
+            />
+            <FooterLink
+              title="Community Help Center"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/community-help-center`}
+            />
           </VStack>
         </GridItem>
         <GridItem gridArea="for">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Alternatives</FooterTitle>
+            <FooterTitle>Resources</FooterTitle>
             <FooterLink
-              title="June vs Amplitude"
+              title="All resources"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-amplitude`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/resources`}
             />
             <FooterLink
-              title="June vs Mixpanel"
+              title="Blog"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-mixpanel`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog`}
+            />
+            <FooterLink
+              title="Docs"
+              type="external"
+              href="docs.crowd.dev"
+            />
+            <FooterLink
+              title="Developers"
+              type="external"
+              href="https://docs.crowd.dev/reference/getting-started-with-crowd-dev-api"
+            />
+            <FooterLink
+              title="Side projects"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/resources#side-projects`}
+            />
+            <FooterLink
+              title="Events"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/resources#events`}
+            />
+            <FooterLink
+              title="Newsletter"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/newsletter-sign-up`}
             />
           </VStack>
         </GridItem>
         <GridItem gridArea="company">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Company</FooterTitle>
+            <FooterTitle>Solutions</FooterTitle>
             {/* <FooterLink title="Our story" /> */}
             <FooterLink
-              title="Careers"
+              title="Founders & Executives"
               type="external"
-              href="https://www.notion.so/projectanalytics/Work-at-June-ba2ff41d03cb4a1ba230eda21daccada"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/crowd-dev-for-founders-executives`}
             />
-            <FooterLink title="Contact" type="external" href="mailto:enzo@june.so" />
-            <FooterLink title="Twitter" type="external" href="https://twitter.com/JuneDotSo" />
-            <FooterLink title="Blog" type="external" href="https://inside.june.so" />
+            <FooterLink
+              title="DevRel & Community"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/crowd-dev-for-devrel-and-community`}
+            />
+            <FooterLink
+              title="Go-to-market"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/crowd-dev-for-go-to-market-teams`}
+            />
+
           </VStack>
         </GridItem>
         <GridItem gridArea="legal">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Legal</FooterTitle>
+            <FooterTitle>Company</FooterTitle>
             <FooterLink
-              title="Terms"
+              title="About us"
               type="external"
-              href="https://www.notion.so/Terms-of-Service-3a8be1c25dd04cf699800425153a03f8"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/about-us`}
             />
             <FooterLink
-              title="Privacy"
+              title="Contact"
               type="external"
-              href="https://www.notion.so/Privacy-Policy-a4f99393a98b4ce6aa1bacd5f48157cc"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/contact`}
             />
-            <VStack align="start">
-              <FooterLink
-                style={{ display: ["none", "none", "block"] }}
-                title="Backed by"
-                type="text"
-              />
-              <FooterLink
-                type="node"
-                title={
-                  <Image
-                    src="/yc-orange-logo.png"
-                    alt="y-combinator logo"
-                    height={6}
-                    w="auto"
-                    display={["none", "none", "block"]}
-                  />
-                }
-              />
-            </VStack>
             <FooterLink
-              type="node"
-              title={
-                <chakra.a
-                  href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
-                  target="_blank"
-                  rel="noreferrer"
-                  display={["none", "none", "block"]}
-                >
-                  <Image
-                    src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
-                    alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
-                    htmlWidth="250"
-                    htmlHeight="54"
-                    width="250px"
-                    height="54px"
-                  />
-                </chakra.a>
-              }
-            />
-            <FooterLink title="Copyright © 2023 June" type="text" />
-          </VStack>
-        </GridItem>
-        <GridItem display={["block", "block", "none"]}>
-          <VStack align="start">
-            <FooterLink title="Backed by" type="text" />
-            <FooterLink
-              type="node"
-              title={
-                <Image src="/yc-orange-logo.png" alt="y-combinator logo" height={6} w="auto" />
-              }
-            />
-          </VStack>
-        </GridItem>
-        <GridItem display={["block", "block", "none"]}>
-          <VStack align="start" spacing={gap}>
-            <FooterLink
-              type="node"
-              title={
-                <a
-                  href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
-                    alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
-                    htmlWidth="250"
-                    htmlHeight="54"
-                    width="250px"
-                    height="54px"
-                  />
-                </a>
-              }
+              title="Book a demo"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/book-a-demo`}
             />
           </VStack>
         </GridItem>

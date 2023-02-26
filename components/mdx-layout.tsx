@@ -7,15 +7,17 @@ import {
   OrderedList,
   Text,
   UnorderedList,
+  Button,
   VStack,
+  Flex
 } from "@chakra-ui/react";
+import VideoPlayer from "./video-player";
 import { MDXProvider } from "@mdx-js/react";
 import { ReactNode } from "@mdx-js/react/lib";
 import dayjs from "dayjs";
 import type { MDXComponents } from "mdx/types";
 import Head from "next/head";
 import Link from "next/link";
-
 import { Contributor } from "components/contributor";
 import Footer from "components/core/footer";
 import Navbar from "components/core/navbar";
@@ -43,12 +45,13 @@ export interface MdxLayoutProps {
   hideLayout?: boolean;
   hideHead?: boolean;
   hideAuthors?: boolean;
+  blockAutoplay?: boolean;
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
-  const title = `${props.meta.title} | June Changelog`;
-  const description = "Discover new updates and improvements to June.";
-  const url = "https://changelog.june.so";
+  const title = `${props.meta.title} | crowd.dev | Changelog`;
+  const description = "Discover new updates and improvements to crowd.dev.";
+  const url = "https://changelog.crowd.dev";
 
   return (
     <MDXProvider components={components}>
@@ -74,17 +77,29 @@ export const MdxLayout = (props: MdxLayoutProps) => {
       <Box>
         {!props.hideLayout && <Navbar />}
         <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
-          <Box mt={!props.hideLayout && [86, 86, 140]} maxW="4xl" mx="auto" px={defaultPx(32)}>
+          <Box mt={!props.hideLayout && [86, 86, 140]} maxW="5xl" mx="auto" px={defaultPx(32)}>
             {/* Article header */}
             <VStack align="start" spacing={[4, 4, 6]}>
-              <VStack align="start">
-                <Text fontSize="sm" color="landing.gray">
-                  {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
-                </Text>
+              <VStack align="start" width="full">
+                <Flex justify="space-between" w="full">
+
+                  <Text fontSize="sm" color="landing.gray">
+                    {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
+                  </Text>
+                  <Link href={`https://github.com/CrowdDotDev/crowd.dev/releases/tag/${props.meta.version}`}>
+                    <Button variant="outline" outline="none" flex="wrap" alignItems="center">
+                      <Image src="/tag.svg" alt="Github" width="4" height="4" mr={1} />
+                      <Text fontSize="sm" color="landing.gray">
+                        {props.meta.version}
+                      </Text>
+                    </Button>
+                  </Link>
+                </Flex>
                 <Link href={`/changelogs/${props.meta.slug}`}>
                   <Heading
                     as="h1"
                     fontSize={["2xl", "2xl", "32px"]}
+                    fontWeight="semibold"
                     color="#000"
                     cursor="pointer"
                     _hover={{
@@ -95,15 +110,20 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                   </Heading>
                 </Link>
               </VStack>
-              <Image
-                borderRadius="md"
-                src={props.meta.headerImage}
-                alt={props.meta.title}
-                w="full"
-              />
+              {props.meta.headerVideo ? (
+                <VideoPlayer url={props.meta.headerVideo} playing={!props.blockAutoplay} />
+              ) : (
+                <Image
+                  borderRadius="md"
+                  src={props.meta.headerImage}
+                  alt={props.meta.title}
+                  w="full"
+                />
+              )}
+
             </VStack>
             {/* Article content */}
-            <Box px={[6]} pt={[10]} fontSize="lg" lineHeight="32px" color="landing.almostBlack.500">
+            <Box px={[6]} pt={[10]} fontSize="md" lineHeight="32px" color="landing.almostBlack.500">
               {props.children}
             </Box>
             {/* Article authors */}

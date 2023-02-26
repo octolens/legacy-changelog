@@ -4,8 +4,7 @@
   "description": "",
   "main": "strapi-to-mdx.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node strapi-to-mdx.mjs"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",

@@ -1,4 +1,4 @@
-import { Text, TextProps } from "@chakra-ui/react";
+import { Flex, TextProps, Image } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 
@@ -7,6 +7,7 @@ export interface DesktopNavItemProps {
   type: "external-link" | "internal-link";
   href?: string;
   isActive?: boolean;
+  icon?: string;
 }
 
 export function DesktopNavItem(props: DesktopNavItemProps) {
@@ -19,17 +20,30 @@ export function DesktopNavItem(props: DesktopNavItemProps) {
 
   return (
     <Wrapper>
-      <Text
+      <Flex
         {...defaultNavItemStyle}
-        color={props.isActive ? "purple.500" : "landing.black"}
+        color={props.isActive ? "brand.500" : "landing.black"}
         as={props.type === "external-link" ? "a" : "div"}
+        alignItems="center"
         {...(props.type === "external-link" && {
           href: props.href,
           rel: "noreferrer noopener",
         })}
       >
+        {
+        props.icon && (
+          <Image
+            src={`/github.svg`}
+            alt={props.icon}
+            w={4}
+            h={4}
+            mr={2}
+            display={["none", "none", "inline-block"]}
+          />
+        )
+      }
         {props.title}
-      </Text>
+      </Flex>
     </Wrapper>
   );
 }
@@ -37,11 +51,11 @@ export function DesktopNavItem(props: DesktopNavItemProps) {
 export const defaultNavItemStyle: TextProps = {
   style: { textDecoration: "none" },
   fontFamily: "landingHeading",
-  fontWeight: "bold",
+  fontWeight: "medium",
   fontSize: "sm",
   color: "landing.black",
   textAlign: "center",
   cursor: "pointer",
-  _hover: { color: "purple.500" },
-  _active: { color: "purple.600" },
+  _hover: { color: "brand.500" },
+  _active: { color: "brand.600" },
 };

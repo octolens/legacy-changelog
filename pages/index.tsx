@@ -10,7 +10,7 @@ const Page = ({ slugs }) => {
   return (
     <PaginatedArticles page={0}>
       {Articles.map((Article, index) => (
-        <Article key={index} hideLayout={true} hideHead={true} hideAuthors={true} />
+        <Article key={index} hideLayout={true} hideHead={true} hideAuthors={true} blockAutoplay={true} />
       ))}
     </PaginatedArticles>
   );

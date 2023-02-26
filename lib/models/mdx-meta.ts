@@ -1,4 +1,6 @@
 export interface MdxMeta {
+  version: string;
+  headerVideo?: string;
   publishedAt: string;
   title: string;
   headerImage: string;

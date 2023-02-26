@@ -2,8 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { defaultPx } from "lib/utils/default-container-px";
 import { DesktopNavItem } from "components/core/navbar/desktop-nav-item";
-import { HamburgerMenu } from "components/core/custom-icons/hamburger-icon";
-import { CloseIcon } from "components/core/custom-icons/close-icon";
 import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from "@chakra-ui/react";
 
 const MOBILE_MENU_COLOR = "#241f47";
@@ -16,19 +14,20 @@ const ROUTES = [
     type: "internal-link",
   },
   {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/customer-stories",
-    title: "Customers",
-    type: "external-link",
-  },
-  {
-    href: "https://qualify.june.so",
-    title: "Qualification",
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/blog",
+    title: "Blog",
     type: "external-link",
   },
   {
     href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
     title: "Pricing",
     type: "external-link",
+  },
+  {
+    href: "https://github.com/CrowdDotDev/crowd.dev",
+    title: "GitHub",
+    type: "external-link",
+    icon: "github",
   },
 ] as const;
 
@@ -43,43 +42,37 @@ export default function Navbar(props: Props) {
   return (
     <>
       {/* Mobile navbar */}
-      {isOpen ? (
-        <Box
-          w="100%"
-          maxWidth="100vw"
-          position="fixed"
-          zIndex="overlay"
-          display={["block", "block", "none"]}
-        >
-          <Flex direction="column">
-            <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
-                <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
-              </Flex>
-              <Flex p={4} onClick={toggle}>
-                <Box pr={1}>
-                  <CloseIcon />
-                </Box>
-              </Flex>
-            </Flex>
-          </Flex>
-        </Box>
-      ) : (
+      {
         <Box w="100%" zIndex="overlay" display={["block", "block", "none"]} position="absolute">
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
-                <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
+                <Image h={12} src="/crowd-dev-logo-small.svg" alt="crowd-dev-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
-                <Box>
-                  <HamburgerMenu />
-                </Box>
+                <HStack spacing={4} align="center">
+                  <Button
+                    as="a"
+                    size="landingMd"
+                    variant="landingOutline"
+                    href={`${process.env.NEXT_PUBLIC_APP_HOST}/auth/signin`}
+                  >
+                    Login
+                  </Button>
+                  <Button
+                    as="a"
+                    size="landingMd"
+                    variant="landingSolid"
+                    href={`${process.env.NEXT_PUBLIC_APP_HOST}/auth/signup`}
+                  >
+                    Get Started for Free
+                  </Button>
+                </HStack>
               </Flex>
             </Flex>
           </Flex>
         </Box>
-      )}
+      }
       <Flex
         px={5}
         py="30%"
@@ -97,7 +90,7 @@ export default function Navbar(props: Props) {
           <Flex
             align="center"
             as="a"
-            href="https://changelog.june.so/"
+            href="/"
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
@@ -145,7 +138,7 @@ export default function Navbar(props: Props) {
             Log in
           </Button>
           <Button
-            colorScheme="purple"
+            colorScheme="brand"
             size="md"
             h={50}
             as="a"
@@ -153,7 +146,7 @@ export default function Navbar(props: Props) {
             borderRadius={6}
             fontWeight={MOBILE_FONT_WEIGHT}
           >
-            Sign up
+            Get Started For Free
           </Button>
         </Stack>
       </Flex>
@@ -168,11 +161,11 @@ export default function Navbar(props: Props) {
         display={["none", "none", "block"]}
         px={defaultPx(32)}
       >
-        <Flex py={6} direction="row" justify="space-between">
+        <Flex py={6} direction="row" justify="space-between" alignItems={"center"}>
           {/* Logo */}
           <Link href={process.env.NEXT_PUBLIC_MARKETING_HOST} passHref prefetch={false}>
             <Flex display={["none", "none", "block"]} cursor="pointer">
-              <Image h={12} src="/June-logo.svg" alt="june-logo" />
+              <Image h={6} src="/crowd-dev-logo.svg" alt="crowd-dev-logo" />
             </Flex>
           </Link>
           {/* Navigation items */}
@@ -202,7 +195,7 @@ export default function Navbar(props: Props) {
               variant="landingSolid"
               href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
             >
-              Sign up
+              Get Started For Free
             </Button>
           </HStack>
         </Flex>

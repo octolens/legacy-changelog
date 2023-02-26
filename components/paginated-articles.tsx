@@ -13,7 +13,7 @@ export interface PaginatedArticlesProps {
 }
 
 export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) => {
-  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} June Changelog`;
+  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} crowd.dev | Changelog`;
 
   return (
     <>
@@ -21,28 +21,28 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
         <title>{metaTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={metaTitle} />
-        <meta name="description" content="Discover new updates and improvements to June." />
-        <meta name="image" content="https://changelog.june.so/social.png" />
+        <meta name="description" content="Discover new updates and improvements to crowd.dev." />
+        <meta name="image" content="https://changelog.crowd.dev/social.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://changelog.june.so" />
+        <meta property="og:url" content="https://changelog.crowd.dev" />
         <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content="Discover new updates and improvements to June." />
-        <meta property="og:image" content="https://changelog.june.so/social.png" />
+        <meta property="og:description" content="Discover new updates and improvements to crowd.dev." />
+        <meta property="og:image" content="https://changelog.crowd.dev/social.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://changelog.june.so" />
+        <meta name="twitter:url" content="https://changelog.crowd.dev" />
         <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content="Discover new updates and improvements to June." />
-        <meta name="twitter:image" content="https://changelog.june.so/social.png" />
+        <meta name="twitter:description" content="Discover new updates and improvements to crowd.dev." />
+        <meta name="twitter:image" content="https://changelog.crowd.dev/social.png" />
       </Head>
       <Navbar />
       <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
         <Container maxW="landingMax" px={defaultPx(32)} mt={[86, 86, 140]}>
           <VStack>
-            <Heading as="h1" fontSize={["5xl"]} color="black">
+            <Heading as="h1" fontSize={["5xl"]} fontWeight="semibold" color="almostBlack">
               Changelog
             </Heading>
-            <Text fontSize="xl" color="gray.700">
-              How June gets better, every week
+            <Text fontSize="xl" color="gray.600" fontWeight="normal">
+              How crowd.dev gets better, every week.
             </Text>
           </VStack>
           <Divider my={16} />

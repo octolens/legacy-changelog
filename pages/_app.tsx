@@ -20,14 +20,14 @@ import "@fontsource/inter/700.css";
 import "@fontsource/inter/800.css";
 import "@fontsource/inter/900.css";
 
-import juneTheme from "../lib/theme";
+import crowdTheme from "../lib/theme";
 
 dayjs.extend(advancedFormat);
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <AnimateSharedLayout>
-      <ChakraProvider theme={juneTheme}>
+      <ChakraProvider theme={crowdTheme}>
         <Component {...pageProps} />
       </ChakraProvider>
     </AnimateSharedLayout>
