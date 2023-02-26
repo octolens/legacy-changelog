@@ -1,0 +1,111 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "eagle-eye-2",
+  publishedAt: "2023-02-08T09:00:00.000Z",
+  title: "Eagle Eye (2.0)",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/220153970-e2642f81-fd37-4d01-9a69-838c263f96f9.png",
+  version: "v0.20.0",
+  headerVideo: "https://www.youtube.com/watch?v=kw45q0NXpjw",
+  mainPullRequest: 495,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "Product",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Matti Nannt",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/675065?s=60&v=4",
+    },
+  ],
+};
+
+This week we have some super exciting updates. We are introducing Eagle Eye 2.0: a better way to grow your developer tool by engaging with relevant content.
+
+With a refreshed user interface and several new features, Eagle Eye 2.0 will help you find and engage with the perfect content in your niche. Below are some of the highlights:
+
+### New user interface
+
+We have redesigned the user interface to make setting up your feed and discovering relevant content easier.
+
+### More platforms
+
+Eagle Eye now supports 11 of the most relevant platforms for developer tools. You can now access content from Reddit, GitHub discussions, Tweets, Medium posts, Stack Overflow questions, DEV and Hacker News posts, YouTube videos, Producthunt discussions, Kaggle discussions, and Hashnode articles.
+
+### Better search
+
+We have improved the search algorithm to give you more relevant results. You can now exclude certain keywords from your search, enabling you to tailor your results further.
+
+### Email digest
+
+Stay up-to-date with your Eagle Eye feed by configuring an email digest that delivers a daily feed to your inbox. This feature will help you to make growth a daily routine.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/220158597-7178802e-eef9-493c-a7d8-ac39a9040945.png"
+  maxWidth="50%"
+/>
+
+### AI replies
+
+Eagle Eye 2.0 also offers a new AI-powered feature that generates suggested replies for your content.
+
+<VideoPlayer url="https://www.youtube.com/watch?v=Mxql2iMoO7w" />
+
+## Other bug fixes and improvements
+
+- The Discord integration now uses web-sockets. This will allow us to scale the integration to a lot more users. <PullRequest number="486" />
+- We added a product-market fit widget, powered by Formbricks. <PullRequest number="467" />
+- Fixed a bug where several identities were missing when editing a member <PullRequest number="543"/>
+- Filtering out team members in the Active members widget on the home page <PullRequest number="541" />
+- When members are merged, the new member gets the highest of the two scores. <PullRequest number="542" />
+- Fix a message duplication issue when a Discord server has both crowd.dev apps connected. <PullRequest number="538" />
+- Fix several issues with the Export to CSV functionality. <PullRequest number="533"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

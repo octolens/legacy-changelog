@@ -1,4 +1,5 @@
 export interface MdxMeta {
+  mainPullRequest: string;
   version: string;
   headerVideo?: string;
   publishedAt: string;

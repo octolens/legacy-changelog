@@ -22,15 +22,17 @@ import { Contributor } from "components/contributor";
 import Footer from "components/core/footer";
 import Navbar from "components/core/navbar";
 import { TryBanner } from "components/core/try-banner";
+import PullRequest from "components/pull-request";
 import { MdxMeta } from "lib/models/mdx-meta";
 import { defaultPx } from "lib/utils/default-container-px";
 
 const components: MDXComponents = {
-  h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
+  h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "3xl"]} color="#000" {...props} />,
   h2: (props) => <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />,
-  p: (props) => <Text my={6} {...props} />,
+  h3: (props) => <Text fontWeight="medium" fontSize="lg" mt={6} mb={1} {...props} />,
+  p: (props) => <Text my={3} {...props} />,
   a: (props) => (
-    <Text as="a" href={props.href} rel="noopener noreferrer" color="#6868F7" fontWeight="bold">
+    <Text as="a" href={props.href} rel="noopener noreferrer" color="#E94F2E" fontWeight="bold">
       {props.children}
     </Text>
   ),
@@ -38,7 +40,6 @@ const components: MDXComponents = {
   ol: (props) => <OrderedList spacing={4} {...props} />,
   li: (props) => <ListItem _before={{ content: "unset" }} {...props} />,
 };
-
 export interface MdxLayoutProps {
   meta: MdxMeta;
   children: ReactNode;
@@ -89,26 +90,30 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                   <Link href={`https://github.com/CrowdDotDev/crowd.dev/releases/tag/${props.meta.version}`}>
                     <Button variant="outline" outline="none" flex="wrap" alignItems="center">
                       <Image src="/tag.svg" alt="Github" width="4" height="4" mr={1} />
-                      <Text fontSize="sm" color="landing.gray">
+                      <Text fontSize="sm" fontFamily="mono" color="gray.600">
                         {props.meta.version}
                       </Text>
                     </Button>
                   </Link>
                 </Flex>
-                <Link href={`/changelogs/${props.meta.slug}`}>
-                  <Heading
-                    as="h1"
-                    fontSize={["2xl", "2xl", "32px"]}
-                    fontWeight="semibold"
-                    color="#000"
-                    cursor="pointer"
-                    _hover={{
-                      textDecor: "underline",
-                    }}
-                  >
-                    {props.meta.title}
-                  </Heading>
-                </Link>
+
+                <Flex justify="space-between" w="full">
+                  <Link href={`/changelogs/${props.meta.slug}`}>
+                    <Heading
+                      as="h1"
+                      fontSize={["2xl", "2xl", "32px"]}
+                      fontWeight="semibold"
+                      color="#000"
+                      cursor="pointer"
+                      _hover={{
+                        textDecor: "underline",
+                      }}
+                    >
+                      {props.meta.title}
+                    </Heading>
+                  </Link>
+                  <PullRequest number={props.meta.mainPullRequest} />
+                </Flex>
               </VStack>
               {props.meta.headerVideo ? (
                 <VideoPlayer url={props.meta.headerVideo} playing={!props.blockAutoplay} />

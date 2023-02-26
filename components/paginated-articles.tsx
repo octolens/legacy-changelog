@@ -38,17 +38,17 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
       <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
         <Container maxW="landingMax" px={defaultPx(32)} mt={[86, 86, 140]}>
           <VStack>
-            <Heading as="h1" fontSize={["5xl"]} fontWeight="semibold" color="almostBlack">
+            <Heading as="h1" fontSize={["3xl", "4xl"]} fontWeight="semibold" color="almostBlack">
               Changelog
             </Heading>
-            <Text fontSize="xl" color="gray.600" fontWeight="normal">
-              How crowd.dev gets better, every week.
+            <Text fontSize="xl" color="gray.600" fontWeight="normal" textAlign={["center", "left"]}>
+              Weekly improvements to crowd.dev.
             </Text>
           </VStack>
-          <Divider my={16} />
+          <Divider my={[10, 16]} />
           <VStack spacing={16} divider={<Divider />}>
             {children}
-            <VStack align={["stretch", "stretch", "center"]}>
+            {/* <VStack align={["stretch", "stretch", "center"]}>
               {page === 0 ? (
                 <Link href="/page/1">
                   <Button variant="landingOutline" size="landingLg">
@@ -71,7 +71,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
                   </Link>
                 </HStack>
               )}
-            </VStack>
+            </VStack> */}
           </VStack>
         </Container>
         <TryBanner _wrapper={{ my: [50, 50, 120] }} />
