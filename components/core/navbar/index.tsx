@@ -185,7 +185,7 @@ export default function Navbar(props: Props) {
               as="a"
               size="landingMd"
               variant="landingOutline"
-              href={`${process.env.NEXT_PUBLIC_APP_HOST}/log-in`}
+              href={`${process.env.NEXT_PUBLIC_APP_HOST}/auth/signin`}
             >
               Login
             </Button>
@@ -193,7 +193,7 @@ export default function Navbar(props: Props) {
               as="a"
               size="landingMd"
               variant="landingSolid"
-              href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
+              href={`${process.env.NEXT_PUBLIC_APP_HOST}/auth/signup`}
             >
               Get Started For Free
             </Button>
