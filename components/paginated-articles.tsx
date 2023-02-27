@@ -42,7 +42,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
               Changelog
             </Heading>
             <Text fontSize="xl" color="gray.600" fontWeight="normal" textAlign={["center", "left"]}>
-              Weekly improvements to crowd.dev.
+              crowd.dev levels-up, weekly
             </Text>
           </VStack>
           <Divider my={[10, 16]} />
