@@ -2,6 +2,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import { AnimateSharedLayout } from "framer-motion";
+import PlausibleProvider from 'next-plausible'
+
 
 import "@fontsource/ibm-plex-sans/100.css";
 import "@fontsource/ibm-plex-sans/200.css";
@@ -26,11 +28,13 @@ dayjs.extend(advancedFormat);
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <AnimateSharedLayout>
-      <ChakraProvider theme={crowdTheme}>
-        <Component {...pageProps} />
-      </ChakraProvider>
-    </AnimateSharedLayout>
+    <PlausibleProvider domain="changelog.crowd.dev">
+      <AnimateSharedLayout>
+        <ChakraProvider theme={crowdTheme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </AnimateSharedLayout>
+    </PlausibleProvider>
   );
 };
 
