@@ -23,8 +23,11 @@ interface Props {
 
 export default function Footer(props: Props) {
   return (
-    <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper} bgColor="black" paddingTop="10px" color="gray.50" py={20}>
+    <Flex
+      justify="center" maxW="100vw" px={defaultPx(32)} {...props._wrapper}
+      bgColor="black" paddingTop="10px" color="gray.50" py={20}>
       <Grid
+        maxW="landingMax"
         gap={[6, 6, 4]}
         templateColumns={["repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(5, 1fr)"]}
         gridTemplateAreas={[
@@ -160,6 +163,6 @@ export default function Footer(props: Props) {
           </VStack>
         </GridItem>
       </Grid>
-    </Container>
+    </Flex>
   );
 }
