@@ -1,0 +1,142 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "new-home",
+  publishedAt: "2023-02-27T09:00:00.000Z",
+  title: "New and improved home",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/220153970-e2642f81-fd37-4d01-9a69-838c263f96f9.png",
+  version: "v0.21.0",
+  headerVideo: "https://www.youtube.com/watch?v=kw45q0NXpjw",
+  mainPullRequest: 560,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Product",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "Engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "Product",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+  ],
+};
+
+In October, we introduced a brand-new version of [crowd.dev](https://crowd.dev).
+The new product was received greatly by the community.
+We got tons of great feedback from our users, and we iterated over and over to make the crowd.dev more mature.
+We have learned much about how we deliver value over the past few months, and our vision for the product has sharpened.
+This caused the home that we envisioned in October to be outdated; it was not what crowd.dev needed anymore. We decided to rebuild it.
+
+### More emphasis on your community members and organizations
+
+Members are the pillar of your community, and we wanted to make sure that they were the focus of the new home.
+The first two widgets are not your new and most active members, side by side. No more tab switching to get a full picture of your members.
+
+Organizations are another important part of your community. We wanted to make sure that they were also front and center.
+You can see your new and your most active organizations at a glance.
+
+### Direct links to reports
+
+Sometimes you just need to see more numbers. We added a direct link to the members' report on the home page.
+We will be adding more direct links as we release more default reports.
+
+### Less focus on tasks
+
+While tasks still have a place in the new home, they now have a less prominent role. The spotlight should be on your community.
+
+## Introducing our new changelog
+
+Some products make us wait for their weekly changelog like a kid for their birthday,
+like [June.so](https://changelog.june.so) or the [Arc Browser](https://arc.net/).
+One thing all these changelogs have in common is that they are clean, visually appealing, and easy to read.
+Our GitHub changelog was far from that. That is why we built a new changelog last week, starting from [June's open-source changelog](https://github.com/juneHQ/changelog).
+
+### Tuesday is the new Monday
+
+Until now, we had been announcing releases on Mondays. We will be moving it to Tuesday. No one needs another to-do item on Monday, and we want to make sure that you have time to read the changelog and try out the new features.
+New releases will be published here every Tuesday morning.
+
+## Other bug fixes and improvements
+
+- Some attributes of members come from integrations and cannot be deleted, but they might not be relevant for you. You can now hide them in the UI. <PullRequest number="572" />
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/221590712-b90eadd5-d7ec-49fc-8b38-c2812cc4fcb0.png"
+  maxWidth="50%"
+/>
+
+- When you select two members from the members' directory you have the option to merge them. <PullRequest number="573"/>
+
+- You can now create duplicates of custom reports. <PullRequest number="571"/>
+
+- Emojis are properly rendered in Slack activities. <PullRequest number="566"/>
+
+- You can now un-mark a member as _Team Member_. <PullRequest number="565"/>
+
+- Updating a member's organization is now an auto-complete component. <PullRequest number="561"/>
+
+- We moved to Unleash for feature flags. There had been some outages caused by the previous provider which are now fixed. <PullRequest number="559"/>
+
+- We fixed the filter by username, on any platform, for members. <PullRequest number="580"/>
+
+- When there is an error when calculating sentiment when running an integration, it does not cause it to crash. <PullRequest number="579"/>
+
+- The widget for cumulative members count now supports _all time_ date range. <PullRequest number="576"/>
+
+- We fixed a bug on the HackerNews integration that was causing data to be polluted. All the data has also been cleaned up. <PullRequest number="564"/>
+
+- Sometimes when conversations were not being unpublished from the Community Help Center. This is now fixed. <PullRequest number="563"/>
+
+- We removed an outdated _Trial_ label from the organization's page. <PullRequest number="559"/>
+
+- Fixed a bug where the workspace ID was being incorrectly passed to the Discord integration and activities were being missed.
+  All data has been re-populated. <PullRequest number="558"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
