@@ -14,10 +14,10 @@ export function FooterLink({ type = "internal", href = "", ...props }: Props) {
   const Wrapper =
     type === "internal"
       ? ({ children }: { children: React.ReactNode }) => (
-          <Link href={href} passHref>
-            {children}
-          </Link>
-        )
+        <Link href={href} passHref>
+          {children}
+        </Link>
+      )
       : React.Fragment;
 
   return (
@@ -25,7 +25,7 @@ export function FooterLink({ type = "internal", href = "", ...props }: Props) {
       {typeof props.title === "string" ? (
         <Text
           as={type === "text" ? "p" : "a"}
-          color={props.mode === "dark" ? "white" : "landing.gray"}
+          color="gray.50"
           {...(type === "external" && { href })}
           {...props.style}
         >

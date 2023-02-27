@@ -50,9 +50,10 @@ export function TryBanner(props: TryBannerProps) {
       );
 
   return (
-    <Container maxW="landingMax" px={[0, 0, 12, 12, 32]} {...props._wrapper} >
+    <Container maxW="landingMax" px={[0, 0, 12, 12, 32]} {...props._wrapper}>
       <Box
-        bg="linear-gradient(113.99deg, #FDF6F4 15.75%, #FBDCD5 57.98%, #F29582 83.82%);"
+        // bg="linear-gradient(113.99deg, #FDF6F4 15.75%, #FBDCD5 57.98%, #F29582 83.82%);"
+        bg="brand.500"
         borderRadius="md"
         shadow="xl"
         pos="relative"
@@ -76,8 +77,10 @@ export function TryBanner(props: TryBannerProps) {
             fontFamily="landingHeading"
             fontSize={30}
             fontWeight="semibold"
-            color="primary"
+            // color="primary"
+            color="gray.50"
             lineHeight="shorter"
+            display="none"
           >
             {subheading}
           </Text>
@@ -86,11 +89,16 @@ export function TryBanner(props: TryBannerProps) {
             fontFamily="landingHeading"
             fontSize={[32, 32, 54]}
             lineHeight={[1.2, 1.2, "65px"]}
-            color="landing.almostBlack.500"
+            // color="landing.almostBlack.500"
+            color="gray.50"
           >
             {heading}
           </Heading>
-          <Text fontSize={18} fontWeight="medium" color="gray.600">
+          <Text
+            fontSize={18} fontWeight="medium"
+            // color="gray.600"
+            color="gray.50"
+          >
             {description}
           </Text>
           <LinkOrFragment>

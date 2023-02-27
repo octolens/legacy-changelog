@@ -7,7 +7,7 @@ type Props = {
 
 export function FooterTitle(props: Props) {
   return (
-    <Text fontFamily="landingHeading" fontWeight="bold" color="landing.black">
+    <Text fontFamily="landingHeading" fontWeight="bold" color="gray.50">
       {props.children}
     </Text>
   );

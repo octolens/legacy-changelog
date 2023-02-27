@@ -9,19 +9,19 @@ const MOBILE_FONT_WEIGHT = 600;
 
 const ROUTES = [
   {
-    href: "/",
-    title: "Changelog",
-    type: "internal-link",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/blog",
-    title: "Blog",
-    type: "external-link",
-  },
-  {
     href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
     title: "Pricing",
     type: "external-link",
+  },
+  {
+    href: "https://docs.crowd.dev",
+    title: "Docs",
+    type: "external-link",
+  },
+  {
+    href: "/",
+    title: "Changelog",
+    type: "internal-link",
   },
   {
     href: "https://github.com/CrowdDotDev/crowd.dev",

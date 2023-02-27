@@ -145,8 +145,8 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           </Box>
           {!props.hideLayout && (
             <>
-              <TryBanner _wrapper={{ my: [50, 50, 120] }} />
-              <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
+              <TryBanner _wrapper={{ mt: [50, 50, 120] }} />
+              <Footer _wrapper={{ mt: 20, mb: 20 }} />
             </>
           )}
         </Box>

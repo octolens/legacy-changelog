@@ -23,7 +23,7 @@ interface Props {
 
 export default function Footer(props: Props) {
   return (
-    <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper}>
+    <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper} bgColor="black" paddingTop="10px" color="gray.50" py={20}>
       <Grid
         gap={[6, 6, 4]}
         templateColumns={["repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(5, 1fr)"]}
@@ -37,12 +37,12 @@ export default function Footer(props: Props) {
           <VStack align="start" spacing={gap}>
             <Box flexShrink={0}>
               <Image
-                src="/crowd-dev-logo-small.svg"
+                src="/crowd-dev-logo-white.svg"
                 alt="crowd.dev logo"
                 width={100}
               />
             </Box>
-            <Text fontSize="sm" color="gray.500">
+            <Text fontSize="sm" color="gray.50">
               An open-source suite of community and data tools built to unlock community-led growth for developer tools.
             </Text>
             <Flex align="center" w="100%">
