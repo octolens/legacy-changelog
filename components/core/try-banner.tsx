@@ -107,6 +107,7 @@ export function TryBanner(props: TryBannerProps) {
               size="landingMd"
               variant="landingSolid"
               fontFamily="landingHeading"
+              _hover={{ bg: "black", color: "white", borderColor: "black" }}
               rel="noreferrer noopener"
               {...(buttonHrefType === "external" && { href: buttonHref })}
             >
