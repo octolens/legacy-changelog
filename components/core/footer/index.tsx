@@ -93,7 +93,7 @@ export default function Footer(props: Props) {
             <FooterLink
               title="Docs"
               type="external"
-              href="docs.crowd.dev"
+              href="https://docs.crowd.dev"
             />
             <FooterLink
               title="Developers"
