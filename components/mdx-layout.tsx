@@ -151,7 +151,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
         </Box>
       </Box>
       {!props.hideLayout && (
-        <Footer _wrapper={{ mt: 20, mb: 20 }} />
+        <Footer _wrapper={{ mt: 20 }} />
       )}
     </MDXProvider>
   );

@@ -75,7 +75,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
           </VStack>
         </Container>
         <TryBanner _wrapper={{ mt: [50, 50, 120] }} />
-        <Footer _wrapper={{ mt: 20, mb: 20 }} />
+        <Footer _wrapper={{ mt: 20, }} />
       </Box>
     </>
   );
