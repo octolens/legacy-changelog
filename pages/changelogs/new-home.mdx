@@ -139,6 +139,8 @@ New releases will be published here every Tuesday morning.
 - Fixed a bug where the workspace ID was being incorrectly passed to the Discord integration and activities were being missed.
   All data has been re-populated. <PullRequest number="558"/>
 
+- There were two unhandled edge cases in the Twitter integration: when an account had no followers, and when an account had no mentions. We fixed them both. <PullRequest number="584"/> <PullRequest number="585"/>
+
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
     {children}
