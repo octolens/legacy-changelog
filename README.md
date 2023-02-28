@@ -1,24 +1,14 @@
 # Changelog
 
-Set-up a blog and share what you ship as easy as 1-2-3!
-
-![screenshot](/changelog.png)
-
-A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable and open source, so don't hesitate to add new features and report bugs!
-
-## Features
-
-- A stylish changelog
-- Celebrate your team's achievements - with team credits on each post
-- Easy-to-use admin panel
+Our open-source changelog. Forked from [June's changelog](https://github.com/juneHQ/changelog).
 
 ## Getting started
 
 The easiest way to try this starter is to run it locally on your computer.
 
-First, you'll need to create your own copy of this starter. You can do so by clicking the ["Use this template"](https://github.com/ferrucc-io/changelog/generate) button on GitHub and filling out the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
+You will need to clone the repository, and copy the `.env.example` file as `.env`.
 
-Once you've cloned the repository, install dependencies and start the Next.js server:
+Then install dependencies and start the Next.js server:
 
 ```bash
 # Using yarn
@@ -39,8 +29,6 @@ cp .env.local.example .env.local
 ## Deploying
 
 You can deploy your blog to any hosting provider that supports Next.js. We recommend [Vercel](https://vercel.com), as it is the easiest way to deploy Next.js apps.
-
-To deploy you'll need to make sure you include the right environment variables. You can find some examples of our environment variables in the [`.env.local.example`](https://github.com/juneHQ/changelog/tree/master/.env.example) file.
 
 ## Routes
 
@@ -73,7 +61,7 @@ To write a new blog post, create a new `.mdx` file in the `/pages/changelogs` di
 
 ### Anatomy of an MDX article
 
-MDX is a superset of markdown that lets you write JSX directly in your markdown files. It is a powerful way to add dynamic interactivity, and embed components within your content, helping you to bring your pages to life.
+MDX is a superset of markdown that lets you write JSX directly in your markdown files. It is a powerful way to add dynamic interactivity and embed components within your content, helping you to bring your pages to life.
 
 ![mdx-preview](/mdx-preview.png)
 
@@ -83,5 +71,5 @@ Learn more 👉 [Next.js: Using MDX](https://nextjs.org/docs/advanced-features/u
 
 Most of the branding elements can be found in `<Navbar>` and `<Footer>` components. To customize these components, update the code in these directories:
 
-- [`components/core/navbar/index.tsx`](https://github.com/juneHQ/changelog/tree/master/components/core/navbar)
-- [`components/core/footer/index.tsx`](https://github.com/juneHQ/changelog/tree/master/components/core/footer)
+- [`components/core/navbar/index.tsx`](https://github.com/CrowdDotDev/changelog/tree/master/components/core/navbar)
+- [`components/core/footer/index.tsx`](https://github.com/CrowdDotDev/changelog/tree/master/components/core/footer)
