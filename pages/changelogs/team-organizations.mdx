@@ -1,0 +1,147 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "team-organizations",
+  publishedAt: "2023-03-07T12:00",
+  title: "Improvements to the UX",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/221615733-a4662005-7c67-4a27-b981-17aadf47920b.png",
+  version: "v0.22.0",
+  headerVideo: "https://www.youtube.com/watch?v=bllfVZZfxxw",
+  mainPullRequest: 502,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+A strong product should have great features, but it will only be phenomenal if the UX is perfect. Sometimes the tiniest things make the most significant difference.
+Lately, we have been focusing on new features: we quickly released Eagle Eye, member enrichment, and the new Home page. However, we
+overlooked some minor details that made the product feel more polished. This week we brought those details to the forefront.
+
+## Improvements to organizations
+
+Having correct and clean data is crucial to get value from crowd.dev.
+Things like having team members set up correctly and having perfect consistency among the members of an organization can make a difference.
+
+### Marking organizations as team members
+
+You can now mark a whole organization as being part of your team. Doing so will mark all members of the organization as team members.
+All related members and activities will be ignored when computing your community metrics.
+For example, your organization will no longer be the most active.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/221615733-a4662005-7c67-4a27-b981-17aadf47920b.png"
+  maxWidth="full"
+/>
+
+### Hide members that are organizations (from LinkedIn)
+
+LinkedIn treats organizations and people similarly. Often, you will have your own organization's account commenting on your posts.
+When that happens crowd.dev will create a member for your organization. But you may want to avoid seeing your organization as a community member.
+These are now hidden from the UI by default and ignored when computing metrics.
+
+## Editing of members' multi-select attributes in the UI
+
+With member enrichment, we also introduced multi-select attributes for members.
+These attributes are useful for lists with limited options, like skills, interests, or languages.
+Since we wanted to bring enrichment to you as soon as possible, we decided to make them temporarily read-only.
+
+Nevertheless, information from enrichment might not be perfect, and you should be able to edit it.
+You can now do so from the UI.
+
+Having multi-select attributes as read-only was also unblocking other features requested by our users, like making the _location_ attribute a multi-select.
+We will be working on this soon!
+
+## Re-enrich a member
+
+We refresh enrichment data every quarter. For key members, you might want to re-enrich them more often to answer questions like their current job or location.
+You can now re-enrich members that were enriched in the past.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/223131800-c7abaa4f-b0b0-4e61-8df1-a6f41111ae5c.png"
+  maxWidth="80%"
+/>
+
+## Alerting for integrations
+
+We are working hard to have a reliable integration framework, but some errors are unavoidable.
+We have been working on a new alerting system for integrations.
+When an integration has not received the data we are expecting from it, we will now send you an alert in the UI.
+We also built an internal Slack alerting system, so if it does not behave as expected, we will be notified and can take action quickly.
+
+## Other bug fixes and improvements
+
+- We improved the performance of searching for members by adding a pagination limit to the request. <PullRequest number="587"/>
+
+- We replaced the partner logos to show the most up-to-date state. <PullRequest number="581"/>
+
+- If you leave the page after searching for members, the query is re-added to the initial state when coming back. <PullRequest number="603"/>
+
+- When a member has multiple organizations, show them all in the UI. <PullRequest number="608"/>
+
+- Sometimes, the GitHub integration needs an admin's approval. When this happens, you will be alerted by the UI to invite the admin instead of saying the integration is _in progress_. <PullRequest number="601"/>
+
+- We fixed a bug where enriched members could not be merged. This is nows fixed. <PullRequest number="588"/>
+
+- We made some changes to the Slack integration. Before, we created an activity every time a member joined a channel.
+  This caused the joined activity to be repeated. We not only create one such activity per member. <PullRequest number="582"/>
+
+- Members' emails can now be edited from the UI. <PullRequest number="598"/>
+
+- We moved user management back to the free tier in the self-hosted version. <PullRequest number="599"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
