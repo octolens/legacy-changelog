@@ -73,7 +73,7 @@ overlooked some minor details that made the product feel more polished. This wee
 Having correct and clean data is crucial to get value from crowd.dev.
 Things like having team members set up correctly and having perfect consistency among the members of an organization can make a difference.
 
-### Marking organizations as team members
+### Marking organizations as team members <PullRequest number="602"/>
 
 You can now mark a whole organization as being part of your team. Doing so will mark all members of the organization as team members.
 All related members and activities will be ignored when computing your community metrics.
@@ -84,13 +84,13 @@ For example, your organization will no longer be the most active.
   maxWidth="full"
 />
 
-### Hide members that are organizations (from LinkedIn)
+### Hide members that are organizations (from LinkedIn) <PullRequest number="605"/>
 
 LinkedIn treats organizations and people similarly. Often, you will have your own organization's account commenting on your posts.
 When that happens crowd.dev will create a member for your organization. But you may want to avoid seeing your organization as a community member.
 These are now hidden from the UI by default and ignored when computing metrics.
 
-## Editing of members' multi-select attributes in the UI
+## Editing of members' multi-select attributes in the UI <PullRequest number="593"/>
 
 With member enrichment, we also introduced multi-select attributes for members.
 These attributes are useful for lists with limited options, like skills, interests, or languages.
@@ -107,7 +107,7 @@ You can now do so from the UI.
 Having multi-select attributes as read-only was also unblocking other features requested by our users, like making the _location_ attribute a multi-select.
 We will be working on this soon!
 
-## Re-enrich a member
+## Re-enrich a member <PullRequest number="594"/>
 
 We refresh enrichment data every quarter. For key members, you might want to re-enrich them more often to answer questions like their current job or location.
 You can now re-enrich members that were enriched in the past.
@@ -117,7 +117,7 @@ You can now re-enrich members that were enriched in the past.
   maxWidth="80%"
 />
 
-## Alerting for integrations
+## Alerting for integrations <PullRequest number="616"/>
 
 We are working hard to have a reliable integration framework, but some errors are unavoidable.
 We have been working on a new alerting system for integrations.
