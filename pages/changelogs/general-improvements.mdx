@@ -5,14 +5,13 @@ import PullRequest from "components/pull-request.tsx";
 import { Flex } from "@chakra-ui/react";
 
 export const meta = {
-  slug: "team-organizations",
+  slug: "general-improvements",
   publishedAt: "2023-03-07T12:00",
-  title: "Improvements to the UX",
+  title: "General improvements",
   headerImage:
     "https://user-images.githubusercontent.com/37874460/223195612-cdd41efa-0c23-4271-b3f0-061f54a72205.png",
   version: "v0.22.0",
-  headerVideo: "https://www.youtube.com/watch?v=bllfVZZfxxw",
-  mainPullRequest: 502,
+  mainPullRequest: 593,
   authors: [
     {
       name: "Nuno Eufrasio",
@@ -68,6 +67,18 @@ A strong product should have great features, but it will only be phenomenal if t
 Lately, we have been focusing on new features: we quickly released Eagle Eye, member enrichment, and the new Home page. However, we
 overlooked some minor details that made the product feel more polished. This week we brought those details to the forefront.
 
+## Editing of members' multi-select attributes in the UI <PullRequest number="593"/>
+
+With member enrichment, we also introduced multi-select attributes for members.
+These attributes are useful for lists with limited options, like skills, interests, or languages.
+Since we wanted to bring enrichment to you as soon as possible, we decided to make them temporarily read-only.
+
+Nevertheless, information from enrichment might not be perfect, and you should be able to edit it.
+You can now do so from the UI.
+
+Having multi-select attributes as read-only was also unblocking other features requested by our users, like making the _location_ attribute a multi-select.
+We will be working on this soon!
+
 ## Improvements to organizations
 
 Having correct and clean data is crucial to get value from crowd.dev.
@@ -79,33 +90,11 @@ You can now mark a whole organization as being part of your team. Doing so will 
 All related members and activities will be ignored when computing your community metrics.
 For example, your organization will no longer be the most active.
 
-<CenteredImage
-  src="https://user-images.githubusercontent.com/37874460/221615733-a4662005-7c67-4a27-b981-17aadf47920b.png"
-  maxWidth="full"
-/>
-
 ### Hide members that are organizations (from LinkedIn) <PullRequest number="605"/>
 
 LinkedIn treats organizations and people similarly. Often, you will have your own organization's account commenting on your posts.
 When that happens crowd.dev will create a member for your organization. But you may want to avoid seeing your organization as a community member.
 These are now hidden from the UI by default and ignored when computing metrics.
-
-## Editing of members' multi-select attributes in the UI <PullRequest number="593"/>
-
-With member enrichment, we also introduced multi-select attributes for members.
-These attributes are useful for lists with limited options, like skills, interests, or languages.
-Since we wanted to bring enrichment to you as soon as possible, we decided to make them temporarily read-only.
-
-Nevertheless, information from enrichment might not be perfect, and you should be able to edit it.
-You can now do so from the UI.
-
-<CenteredImage
-  src="https://user-images.githubusercontent.com/37874460/223195612-cdd41efa-0c23-4271-b3f0-061f54a72205.png"
-  maxWidth="80%"
-/>
-
-Having multi-select attributes as read-only was also unblocking other features requested by our users, like making the _location_ attribute a multi-select.
-We will be working on this soon!
 
 ## Re-enrich a member <PullRequest number="594"/>
 
