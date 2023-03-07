@@ -50,7 +50,7 @@ export interface MdxLayoutProps {
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
-  const title = `${props.meta.title} | crowd.dev | Changelog`;
+  const title = `${props.meta.title} | crowd.dev Changelog`;
   const description = "Discover new updates and improvements to crowd.dev.";
   const url = "https://changelog.crowd.dev";
 
