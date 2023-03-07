@@ -13,7 +13,7 @@ export interface PaginatedArticlesProps {
 }
 
 export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) => {
-  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} crowd.dev | Changelog`;
+  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} crowd.dev Changelog`;
 
   return (
     <>
