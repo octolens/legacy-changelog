@@ -5,9 +5,9 @@ import PullRequest from "components/pull-request.tsx";
 import { Flex } from "@chakra-ui/react";
 
 export const meta = {
-  slug: "fast-members-query-and-simple-onboarding",
+  slug: "quick-start-guides",
   publishedAt: "2023-03-14T12:00",
-  title: "Performance improvements and a simple and guided onboarding",
+  title: "Quick-start guides",
   headerImage:
     "https://user-images.githubusercontent.com/37874460/224932894-45c3ea20-4b08-4b9a-ab6d-df2e32a657c1.png",
     headerVideo: "https://www.youtube.com/watch?v=LL1z_bRwuyA",
@@ -64,23 +64,11 @@ export const meta = {
   ],
 };
 
-An excellent first impression can work wonders. When you try out a new software application, how quickly it loads and how easy it is to navigate can make or break your experience. If a product takes too long to load or the onboarding process is overwhelming, chances are you won't stick around. That’s why this week we focused on speeding up the most critical query and nailing the onboarding experience.
+An excellent first impression can work wonders. When you try out a new software application, how easy it is to set up and navigate can make or break your experience. If a product takes too long to be ready or the onboarding process is overwhelming, chances are you won't stick around. 
+That’s why this week we focused on nailing the onboarding experience.
 
 
-
-## Faster members' query <PullRequest number="643"/>
-
-Speed was the main focus of this release. When making the first version of crowd.dev, we focused on making the members' directory as powerful and flexible as possible. We let users add custom attributes to segment their community, and we also added powerful filters based on members' activity. We also built it fast; the goal, as always, was to get it in front of our users as soon as possible. This functionality has become a core part of crowd.dev and our users' flow. We had to make sure it was fast and reliable.
-
-<CenteredImage
-  src="https://user-images.githubusercontent.com/37874460/224932869-22b8b1e7-5a18-456a-ae8d-3a217832324b.png"
-  maxWidth="100%"
-/>
-
-We have considerably optimized the members' query, which was the heaviest query in our database while keeping all functionality. You should notice a significant speed boost. We will keep working on performance in the following weeks. We have a lot of ideas to make crowd.dev even faster.
-
-
-## Simple and guided onboarding <PullRequest number="607"/>
+## Quick-start guides and revamped onboarding <PullRequest number="607"/>
 
 Our onboarding flow had several weaknesses: getting started was slow, and there needed to be clear guides on how to get value from the product. We re-designed it completely.
 
@@ -89,7 +77,7 @@ Our onboarding flow had several weaknesses: getting started was slow, and there 
 Before, we prompted users to connect their integrations before showing them the product, causing friction before delivering any value clue. We changed the order. When you sign up, the workspace populates with sample data, which you can explore immediately. Then you can connect your integrations.
 
 
-### Onboarding guides
+### Quick-start guides
 
 We introduced onboarding guides to help you get started, which show the key steps to get up and running with crowd.dev.
 
@@ -123,6 +111,17 @@ We have collected a lot of feedback from our users about Eagle Eye and have been
 
 We are also introducing a new pricing plan which gives you access to Eagle Eye (and all Essential features).
 It runs at $50 per month and is an excellent option for small teams that want to grow through community.
+
+## Faster members' query <PullRequest number="643"/>
+
+Speed was a big focus of this release. When making the first version of crowd.dev, we focused on making the members' directory as powerful and flexible as possible. We let users add custom attributes to segment their community, and we also added powerful filters based on members' activity. We also built it fast; the goal, as always, was to get it in front of our users as soon as possible. This functionality has become a core part of crowd.dev and our users' flow. We had to make sure it was fast and reliable.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/224932869-22b8b1e7-5a18-456a-ae8d-3a217832324b.png"
+  maxWidth="100%"
+/>
+
+We have considerably optimized the members' query, which was the heaviest query in our database while keeping all functionality. You should notice a significant speed boost. We will keep working on performance in the following weeks. We have a lot of ideas to make crowd.dev even faster.
 
 
 ## Other bug fixes and improvements
