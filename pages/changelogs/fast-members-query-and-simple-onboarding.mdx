@@ -64,62 +64,56 @@ export const meta = {
   ],
 };
 
-An excellent first impression can work wonders.
-When you visit a website or try out a new software application,
-how quickly it loads and how easy it is to navigate the onboarding process can make or break your experience with the product.
-If a product takes too long to load or the onboarding process is overwhelming, chances are you won't stick around.
-On the other hand, a snappy product with a smooth onboarding process can make you feel like you've found a gem.
-This week we focused on speeding up the most critical query and nailing the onboarding experience.
+An excellent first impression can work wonders. When you try out a new software application, how quickly it loads and how easy it is to navigate can make or break your experience. If a product takes too long to load or the onboarding process is overwhelming, chances are you won't stick around. That’s why this week we focused on speeding up the most critical query and nailing the onboarding experience.
+
 
 
 ## Faster members' query <PullRequest number="643"/>
 
-Speed was the main focus of this release. When making the first version of crowd.dev, we focused on making the members' directory as powerful and flexible as possible.
-We let users add custom attributes and segment their community by them, and we also added powerful filters based on members' activity.
-We also built it fast; the goal, as always, was to get it in front of our users as soon as possible to validate and iterate.
-This functionality has become a core part of crowd.dev and our users' flow. We had to make sure it was fast and reliable.
+Speed was the main focus of this release. When making the first version of crowd.dev, we focused on making the members' directory as powerful and flexible as possible. We let users add custom attributes to segment their community, and we also added powerful filters based on members' activity. We also built it fast; the goal, as always, was to get it in front of our users as soon as possible. This functionality has become a core part of crowd.dev and our users' flow. We had to make sure it was fast and reliable.
 
 <CenteredImage
   src="https://user-images.githubusercontent.com/37874460/224932869-22b8b1e7-5a18-456a-ae8d-3a217832324b.png"
   maxWidth="100%"
 />
 
-We have considerably optimized the members' query, which was the heaviest query in our database while keeping all functionality. 
-You should notice a significant speed boost.
-We will keep working on performance in the following weeks. We have a lot of ideas to make crowd.dev even faster. 
-
+We have considerably optimized the members' query, which was the heaviest query in our database while keeping all functionality. You should notice a significant speed boost. We will keep working on performance in the following weeks. We have a lot of ideas to make crowd.dev even faster.
 
 
 ## Simple and guided onboarding <PullRequest number="607"/>
 
-Our onboarding flow had several weaknesses: getting started was slow, and there needed to be clear guides on how to get value from the product. 
-We re-designed it completely.
+Our onboarding flow had several weaknesses: getting started was slow, and there needed to be clear guides on how to get value from the product. We re-designed it completely.
 
 ### Product first, then integrations
 
-Before, we prompted users to connect their integrations before showing them the product, causing friction before delivering any value clue. 
-We changed the order. When you sign up, the workspace populates with sample data, which you can explore immediately.
-Then you can connect your integrations.
+Before, we prompted users to connect their integrations before showing them the product, causing friction before delivering any value clue. We changed the order. When you sign up, the workspace populates with sample data, which you can explore immediately. Then you can connect your integrations.
 
 
 ### Onboarding guides
 
-When signing up for a new product, it must showcase how you can get value from it.
 We introduced onboarding guides to help you get started, which show the key steps to get up and running with crowd.dev.
 
 We also made this available for existing users. If you missed some essential value drivers, check them out.
+
 
 <CenteredImage
   src="https://user-images.githubusercontent.com/37874460/224932894-45c3ea20-4b08-4b9a-ab6d-df2e32a657c1.png"
   maxWidth="100%"
 />
 
-
 ### Instant data
 
 We optimized how we handle sample data, so it is instant—no more waiting for the data to be populated. You can start exploring right away.
 
-## Improvements to Eagle Eye and a new plan <PullRequest number="645"/>
+## Improvements to Eagle Eye and Product Hunt launch <PullRequest number="645"/>
+
+### Eagle Eye is live on Product Hunt! 🦅
+
+We have received a lot of great feedback from the community, and today we are launching it on Product Hunt to get more exposure and feedback. We would appreciate your support! 
+
+<iframe  src="https://cards.producthunt.com/cards/posts/383743?v=1" width="100%" height="405" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+### Improvements and new plan
 
 We have collected a lot of feedback from our users about Eagle Eye and have been working on improving it. We introduced several improvements:
 
