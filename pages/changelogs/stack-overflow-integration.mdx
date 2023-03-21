@@ -10,7 +10,7 @@ export const meta = {
   title: "Stack Overflow integration",
   headerImage:
     "https://user-images.githubusercontent.com/37874460/224932894-45c3ea20-4b08-4b9a-ab6d-df2e32a657c1.png",
-    headerVideo: "https://www.youtube.com/watch?v=LL1z_bRwuyA",
+  headerVideo: "https://www.youtube.com/watch?v=LL1z_bRwuyA",
   version: "v0.24.0",
   mainPullRequest: 671,
   authors: [
@@ -70,43 +70,37 @@ export const meta = {
   ],
 };
 
-We believe the value of crowd.dev lies in the rich integrations we offer, 
-and we're committed to expanding our library. 
-Our aim is to ship at least one new integration every month, 
-and this week, we're proud to announce the addition of Stack Overflow to our ever-growing list!
+The value of crowd.dev increases with every new data integration we offer, and we're committed to expanding our library. We aim to ship at least one new integration every month, and this month, we're proud to announce the addition of Stack Overflow!
 
 ### Sync Stack Overflow questions and answers
-With the new Stack Overflow integration, you can seamlessly sync questions and 
-answers directly into your workspace. 
-You can use two methods to find the perfect questions for your community: tag-based searches or keyword matching.
 
-- **Comprehensive tag-based searching**: every Stack Overflow question comes with a tag,
-and our integration allows you to combine these tags to access your community's most relevant questions. 
-When you provide multiple tags, you'll receive questions that match any of them,
-ensuring you get all the valuable insights.
+Stack Overflow is one of the leading forums for developers. Developers using your tool will ask questions there, and others will answer them. A vibrant Stack Overflow community is key for adoption and stickiness of a devtool.
 
-- **Precise keyword matching**: for a more targeted approach, use keyword matching to find questions 
-that precisely match your chosen keywords. 
-For instance, searching for "crowd.dev" will return any question containing that exact term.
+With the new Stack Overflow integration, you can seamlessly import questions and answers directly into your workspace. New questions and answers will be synced as activities in crowd.dev, and their authors will be imported as community members.
+
+You can use two methods to find and import posts related to your DevTool: tag-based searches or keyword matching.
+
+- **Comprehensive tag-based searching**: every Stack Overflow question comes with a tag, and our integration allows you to combine these tags to access your community's most relevant questions. When you provide multiple tags, you'll receive questions that match any of them, ensuring you get all the valuable insights.
+
+- **Precise keyword matching**: for a more targeted approach, use keyword matching to find questions that precisely match your chosen keywords. For instance, searching for "crowd.dev" will return any question containing that exact term.
 
 ### Keep your selection lean and focused
+
 We encourage you to maintain a lean selection to ensure your data accurately represents your community.
 Broad tag selections may result in irrelevant data, cluttering your workspace.
 To help you avoid this, we'll display a warning if we detect your selection might be too broad.
 
 ### What's next?
-We have already planned improvements for this integration, including syncing comments from each question and answer.
-Stay tuned for these enhancements!
+
+We have already planned improvements for this integration, including syncing comments from each question and answer. Stay tuned for these enhancements!
 
 ## Elevate your members with multiple emails <PullRequest number="632"/>
-As crowd.dev continues to grow, we've noticed an increasing demand for members to be associated with multiple emails.
-To meet this need, we modified members' profiles to accept a list of emails.
-This feature also accommodates additional emails returned during member enrichment.
 
+As crowd.dev continues to grow, we've noticed an increasing demand for members to be associated with multiple emails. To meet this need, we modified member profiles to accept a list of emails. This feature also accommodates additional emails returned during member enrichment.
 
 ## Other bug fixes and improvements
 
-- The bar chart granularity was wrong for all-time graphs. This has been fixed. <PullRequest number="667"/>
+- When creating a custom report, the bar chart granularity was wrong for all-time graphs. This has been fixed. <PullRequest number="667"/>
 
 - Updated the member's query to retrieve their last activity using _timestamp_ instead of _createdAt_. <PullRequest number="664"/>
 
@@ -120,8 +114,7 @@ This feature also accommodates additional emails returned during member enrichme
 
 - Fixed the detection logic of when a tenant has sample data. <PullRequest number="652"/>
 
-- Adjusted *last year* date-range in reports to accurately represent the last 365 days. <PullRequest number="648"/>
-
+- Adjusted _last year_ date-range in reports to accurately represent the last 365 days. <PullRequest number="648"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
