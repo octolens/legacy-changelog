@@ -1,0 +1,133 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "stack-overflow-integration",
+  publishedAt: "2023-03-21T12:00",
+  title: "Stack Overflow integration",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/226578533-7fae786a-51b9-4e77-8a3f-b7c9f31b1dc5.png",
+  headerVideo: "https://www.youtube.com/watch?v=YIW0bd1kMU4",
+  version: "v0.24.0",
+  mainPullRequest: 671,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+The value of crowd.dev increases with every new data integration we offer, and we're committed to expanding our library. We aim to ship at least one new integration every month, and this month, we're proud to announce the addition of Stack Overflow!
+
+### Sync Stack Overflow questions and answers
+
+Stack Overflow is one of the leading forums for developers. Developers using your tool will ask questions there, and others will answer them. A vibrant Stack Overflow community is key for adoption and stickiness of a devtool.
+
+With the new Stack Overflow integration, you can seamlessly import questions and answers directly into your workspace. New questions and answers will be synced as activities in crowd.dev, and their authors will be imported as community members.
+
+You can use two methods to find and import posts related to your DevTool: tag-based searches or keyword matching.
+
+- **Comprehensive tag-based searching**: every Stack Overflow question comes with a tag, and our integration allows you to combine these tags to access your community's most relevant questions. When you provide multiple tags, you'll receive questions that match any of them, ensuring you get all the valuable insights.
+
+- **Precise keyword matching**: for a more targeted approach, use keyword matching to find questions that precisely match your chosen keywords. For instance, searching for "crowd.dev" will return any question containing that exact term.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/226578533-7fae786a-51b9-4e77-8a3f-b7c9f31b1dc5.png"
+  maxWidth="100%"
+/>
+
+### Keep your selection lean and focused
+
+We encourage you to maintain a lean selection to ensure your data accurately represents your community.
+Broad tag selections may result in irrelevant data, cluttering your workspace.
+To help you avoid this, we'll display a warning if we detect your selection might be too broad.
+
+### What's next?
+
+We have already planned improvements for this integration, including syncing comments from each question and answer. Stay tuned for these enhancements!
+
+## Elevate your members with multiple emails <PullRequest number="672"/>
+
+As crowd.dev continues to grow, we've noticed an increasing demand for members to be associated with multiple emails. To meet this need, we modified member profiles to accept a list of emails. This feature also accommodates additional emails returned during member enrichment.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/226578760-dcb1aab2-ca54-4c05-975f-cc3a8e4cedd1.png"
+  maxWidth="100%"
+/>
+
+## Other bug fixes and improvements
+
+- When creating a custom report, the bar chart granularity was wrong for all-time graphs. This has been fixed. <PullRequest number="667"/>
+
+- Updated the member's query to retrieve their last activity using _timestamp_ instead of _createdAt_. <PullRequest number="664"/>
+
+- If merging a member fails, the operation will be canceled, and the changes will be rolled back. <PullRequest number="660"/>
+
+- Fixed the event property name in quick-start-guides to be detected by Segment. <PullRequest number="662"/>
+
+- Modified report widget handling to be set only when included in the payload. <PullRequest number="658"/>
+
+- Resolved an exception that prevented making reports public. <PullRequest number="657"/>
+
+- Fixed the detection logic of when a tenant has sample data. <PullRequest number="652"/>
+
+- Adjusted _last year_ date-range in reports to accurately represent the last 365 days. <PullRequest number="648"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
