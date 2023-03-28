@@ -12,6 +12,7 @@ import {
   Flex
 } from "@chakra-ui/react";
 import VideoPlayer from "./video-player";
+import CodeBlock from "./code-block";
 import { MDXProvider } from "@mdx-js/react";
 import { ReactNode } from "@mdx-js/react/lib";
 import dayjs from "dayjs";
@@ -28,6 +29,7 @@ import { defaultPx } from "lib/utils/default-container-px";
 
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "3xl"]} color="#000" {...props} />,
+  code: (props) => <CodeBlock {...props} />,
   h2: (props) => <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />,
   h3: (props) => <Text fontWeight="medium" fontSize="lg" mt={6} mb={1} {...props} />,
   p: (props) => <Text my={3} {...props} />,
