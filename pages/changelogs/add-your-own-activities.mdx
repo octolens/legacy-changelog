@@ -1,0 +1,165 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "add-your-own-activities",
+  publishedAt: "2023-03-28T12:00",
+  title: "Add your own activities",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/228178217-7fa6038d-c901-4a21-be5d-f6328a08acbb.png",
+  headerVideo: "https://www.youtube.com/watch?v=tCkT_Oc3Ki0",
+  version: "v0.25.0",
+  mainPullRequest: 666,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+One key functionality we were missing was the ability to add your own activities unrelated to an existing integration. For example, a community member spoke at an event you hosted.
+
+The _type_ field within activities is a defining factor for rendering. For instance, when the type of activity is set to _star_, and the platform is GitHub, the activity is described as _starred [crowd.dev](https://github.com/CrowdDotDev/crowd.dev)_.
+However, when an activity has an unrecognized type, it's labeled _as did an activity_, which is not descriptive. To address this, we've introduced the option to create activity types for activities beyond the integrations we support.
+
+This opens the door for two significant use cases: creating activities manually and adding activities via API.
+
+## Add activities manually
+
+Manual activity creation is useful when you want to record one-off activities, such as a member speaking at a conference or writing a blog post about your product.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/228154544-bb66e1c0-3271-4736-8492-1654c0b65378.png"
+  maxWidth="100%"
+/>
+
+To begin, create the activity type if it doesn't already exist by using the _Activity types_ button on the activity feed page (refer to the video above).
+Once you've established the type, click the _Add activity button_ to create the activity.
+You'll need to select a member, a type, and a date — these fields are mandatory. You can also include a body, title, and link for the activity.
+
+
+## Adding activities via API
+
+Adding activities via API is needed when you have a large batch of data to import, such as internal product data or a list of members who attended an event.
+It can also help you to continuously sync data from external sources, such as spreadsheets or databases.
+
+To add activities via API, you must first create the type. You can do so from the UI or through API.
+
+```javascript
+import axios from 'axios'
+
+const url = 'https://app.crowd.dev/tenant/{{tenantId}}/settings/activity/types',
+
+const config = {
+  url,
+  headers: { 
+    'Authorization': 'Bearer {{CROWDDEV_API_KEY}}', 
+    'Content-Type': 'application/json'
+  },
+  data: {
+    "type": "attended OSS drinks event"
+  }
+}
+
+await axios.post(config)
+```
+
+With the activity type in place, you can now programmatically [create activities](https://docs.crowd.dev/reference/post_tenant-tenantid-activity-with-member).
+
+```javascript
+import axios from 'axios'
+
+const url = 'https://app.crowd.dev/tenant/{{tenantId}}/activity/with-member',
+
+const config = {
+  url,
+  headers: { 
+    'Authorization': 'Bearer {{CROWDDEV_API_KEY}}', 
+    'Content-Type': 'application/json'
+  },
+  data: {
+    "member": {
+      "username": "gilfoyle"
+    },
+    "timestamp": "2023-03-28",
+    "title": "Addended OSS drinks in Berlin",
+    "type": "attended OSS drinks event",
+    "platform": "custom",
+    "sourceId": "oss-drinks-berlin-2023-03-28-gilfoyle"
+  }
+}
+
+await axios.post(config)
+```
+
+## Other bug fixes and improvements
+
+- Refactored the frontend's ESLint configuration to adopt Airbnb's style guide, solving several code-related issues. <PullRequest number="687"/>
+- Enhanced the app's performance during loading by optimizing the frontend. <PullRequest number="663"/>
+- Added a worker to update sample data to ensure up-to-date information. <PullRequest number="661"/>
+- Imposed stricter limits on the Stack Overflow integration to avoid rate limits. <PullRequest number="683"/>
+- Resolved an issue where email addresses were not properly included in CSV exports. <PullRequest number="682"/>
+- Eliminated redundant frontend queries to the backend to improve performance. <PullRequest number="679"/>
+- Extended the time we can process integrations. Now they could run for several days to avoid rate limits. <PullRequest number="677"/>
+- Addressed a bug in member merge suggestions caused by having multiple email addresses per member. <PullRequest number="678"/>
+- Fixed end-to-end tests for a more reliable continuous integration. <PullRequest number="673"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
