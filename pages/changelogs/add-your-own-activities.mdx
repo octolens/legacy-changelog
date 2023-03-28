@@ -74,15 +74,15 @@ export const meta = {
 
 One key functionality we have long missed is the ability to generate activities unconnected to specific integrations yet still presented attractively in the user interface.
 
-The type field within activities is a defining factor for rendering. For instance, when the _type_ is set to _star_, and the platform is GitHub, the activity is described as _starred [crowd.dev](https://github.com/CrowdDotDev/crowd.dev)_.
+The _type_ field within activities is a defining factor for rendering. For instance, when the _type_ is set to _star_, and the platform is GitHub, the activity is described as _starred [crowd.dev](https://github.com/CrowdDotDev/crowd.dev)_.
 However, when an activity has an unrecognized type, it's labeled as _did an activity_, which is not descriptive.
 To address this, we've introduced the option to create your activity types for activities beyond the integrations we support.
 
-This enhancement opens the door for two significant use cases: crafting activities manually and adding activities via API.
+This opens the door for two significant use cases: creating activities manually and adding activities via API.
 
 ## Add activities manually
 
-You can now create activities manually, which is useful when you want to record one-off activities, such as a member speaking at a conference or writing a blog post about your product.
+Manual activity creation is useful when you want to record one-off activities, such as a member speaking at a conference or writing a blog post about your product.
 
 <CenteredImage
   src="https://user-images.githubusercontent.com/37874460/228154544-bb66e1c0-3271-4736-8492-1654c0b65378.png"
@@ -91,12 +91,13 @@ You can now create activities manually, which is useful when you want to record 
 
 To begin, create the activity type if it doesn't already exist by using the _Activity types_ button on the activity feed page (refer to the video above).
 Once you've established the type, click the _Add activity button_ to create the activity.
+You'll need to select a member, a type, and a date — these fields are mandatory. You can also include a body, title, and link for the activity.
 
 
 ## Adding activities via API
 
 Adding activities via API is needed when you have a large batch of data to import, such as internal product data or a list of members who attended an event.
-It can also help you sync data from external sources, such as spreadsheets or databases.
+It can also help you to continuously sync data from external sources, such as spreadsheets or databases.
 
 To add activities via API, you must first create the type. You can do so from the UI or through API.
 
