@@ -71,12 +71,10 @@ export const meta = {
   ],
 };
 
+One key functionality we were missing was the ability to add your own activities unrelated to an existing integration. For example, a community member spoke at an event you hosted.
 
-One key functionality we have long missed is the ability to generate activities unconnected to specific integrations yet still presented attractively in the user interface.
-
-The _type_ field within activities is a defining factor for rendering. For instance, when the _type_ is set to _star_, and the platform is GitHub, the activity is described as _starred [crowd.dev](https://github.com/CrowdDotDev/crowd.dev)_.
-However, when an activity has an unrecognized type, it's labeled as _did an activity_, which is not descriptive.
-To address this, we've introduced the option to create your activity types for activities beyond the integrations we support.
+The _type_ field within activities is a defining factor for rendering. For instance, when the type of activity is set to _star_, and the platform is GitHub, the activity is described as _starred [crowd.dev](https://github.com/CrowdDotDev/crowd.dev)_.
+However, when an activity has an unrecognized type, it's labeled _as did an activity_, which is not descriptive. To address this, we've introduced the option to create activity types for activities beyond the integrations we support.
 
 This opens the door for two significant use cases: creating activities manually and adding activities via API.
 
