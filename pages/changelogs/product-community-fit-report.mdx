@@ -1,0 +1,121 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "product-community-fit-report",
+  publishedAt: "2023-04-04T12:00",
+  title: "Measure your Product-community fit",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/229734259-c35c249a-7e0d-4ed4-811f-798c003d8e02.png",
+  headerVideo: "https://www.youtube.com/watch?v=n9Y6LSEcrSE",
+  version: "v0.26.0",
+  mainPullRequest: 690,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+A strong connection with your developer community is crucial, especially for open-source and developer-first companies.
+Achieving Product-Community Fit (PCF) means understanding your target community's needs, desires, and values and ensuring your product addresses them.
+We have introduced a new report to help you measure and track PCF.
+
+### Measuring Product-Community Fit 
+
+Developing a measure for PCF can be challenging since it depends on your product, target community, and industry... But for companies with an open-source core, we've identified that Monthly Active Contributors can serve as an excellent success indicator.
+
+<CenteredImage src="https://user-images.githubusercontent.com/37874460/229734232-edb48102-8619-4d41-b764-da6c1f0bed8e.png" maxWidth="100%" />
+
+### Introducing the Product-Community Fit Report
+The new Product-Community Fit report measures PCF for you by tracking Monthly Active Contributors across all community platforms.
+
+The report will show you the evolution of your Monthly Active Contributors and benchmark your results against data from over 150,000 open-source repositories. You can also view who contributed to the community at any time.
+
+<CenteredImage src="https://user-images.githubusercontent.com/37874460/229734259-c35c249a-7e0d-4ed4-811f-798c003d8e02.png" maxWidth="100%" />
+
+Head to your Reports section to find the Product-Community Fit report to access your report. We've taken care of everything, so you can lean back and enjoy the insights!
+
+### Share Your PCF Report with Investors and Stakeholders
+Demonstrating the effectiveness of your Product-Community Fit can be a game-changer in securing funding, generating interest, and validating your project.
+We have added sharing functionality so you can send the report to investors, team members, and other stakeholders.
+
+<VideoPlayer url="https://www.youtube.com/watch?v=xDRm22IPw-4" />
+
+## Other Bug Fixes and Improvements
+
+- Enhanced member data filtering by introducing a filter for checking enriched members. <PullRequest number="709"/>
+- Implemented filtering by `null` values to improve data management. <PullRequest number="708"/>
+- Appended the base URL to all dynamic email templates to ensure compatibility with self-hosting. <PullRequest number="700"/>
+- Integrated logging of integration runs into the database for better tracking. <PullRequest number="695"/>
+- Introduced a search filter for skills and other selection-based member attributes. <PullRequest number="698"/>
+- Fixed the label display issue for the previous period. <PullRequest number="696"/>
+- Ignored deleted posts in the LinkedIn integration to prevent errors. <PullRequest number="718"/>
+- Fixed the counter copy in CSV exports and automations. <PullRequest number="717"/>
+- Improved the form layout for organizations. <PullRequest number="716"/>
+- Added a job to identify and resolve stuck integration runs. <PullRequest number="714"/>
+- Temporarily disabled Forks stream for the GitHub integration. <PullRequest number="713"/>
+- Fixed the all-time date range in reports for accurate representation. <PullRequest number="707"/>
+- Initialized the search engine only when configured to avoid errors. <PullRequest number="710"/>
+- Resolved an issue with member enrichment limits. <PullRequest number="706"/>
+- Removed an obsolete GitHub action. <PullRequest number="704"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
