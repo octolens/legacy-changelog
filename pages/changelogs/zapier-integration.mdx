@@ -8,7 +8,7 @@ import { Flex } from "@chakra-ui/react";
 export const meta = {
   slug: "zapier-integration",
   publishedAt: "2023-04-11T12:00",
-  title: "Zapier integration",
+  title: "Automate your workflows with Zapier",
   headerImage:
     "https://user-images.githubusercontent.com/37874460/231095949-5ae3b886-d5d9-4400-8730-52949f63b0c5.png",
   version: "v0.27.0",
@@ -70,28 +70,36 @@ export const meta = {
   ],
 };
 
-We are introducing the crowd.dev Zapier integration, which will enable you to automate your community workflows and connect crowd.dev with over 3,000 apps.
-
-The Zapier connector is not in the Zapier marketplace yet. To begin using the integration, follow the [invitation link](https://app.crowd.dev/integrations) provided in the Integration settings of the crowd.dev app.
+Today we are excited to announce the crowd.dev Zapier integration! This powerful integration enables you to automate your community workflows and connect crowd.dev with over 3,000 different apps.
+Whether you want to offload repetitive and time-consuming tasks or receive notifications for critical events, there are so many ways you can make use of Zapier.
+The Zapier connector is not in the Zapier marketplace yet.
+To begin using the integration, follow the [invitation link](https://app.crowd.dev/integrations) provided in the Integration settings of the crowd.dev app.
 
 ### Supported Triggers
 
-With this integration, you can set up two triggers: **New Activity** and **New Member**. You could use these triggers to sync your members to Hubspot or CRM,
-to send a message to your Discord channel when a new member joins, to notify you internally when there is an activity with negative sentiment, or to send a welcome email to new members.
+With this integration, you can set up two types of “triggers” (Zapier’s way to detect new events): New Activity and New Member. Some of the powerful ways you can use these triggers include:
+
+- syncing your community members to Hubspot or another CRM
+- sending a message to your Discord channel when a new member joins,
+- notifying you internally when there is an activity with negative sentiment
+- sending a welcome email to new members.
+
+And countless more!
 
 ### Supported Actions
 
-The crowd.dev Zapier integration includes various actions for Activities, Members, Organizations, Tasks, and Notes.
-You can see the complete list of actions in [our docs](https://docs.crowd.dev/docs/zapier-integration#supported-actions).
+The crowd.dev Zapier integration includes various actions for Activities, Members, Organizations, Tasks, and Notes. Actions in Zapier are commands that the integration can perform.
+For example, you can use the Zapier integration to add members and activities from a Google Sheet, a CSV file,
+or another source not supported by crowd.dev.
+At crowd.dev, we recently added activities and members from our OSS drinks in Berlin using the Zapier [Luma connector](https://zapier.com/apps/luma/integrations#page=6).
 
-You can use the Zapier integration to add members and activities from a Google Sheet, a CSV file, or another source not supported by crowd.dev.
-For example, we recently added activities and members from our OSS drinks in Berlin using the [Luma connector](https://zapier.com/apps/luma/integrations#page=6).
-
-By leveraging the crowd.dev Zapier integration, you can create more efficient workflows, improve collaboration, and automate processes within your community.
+By leveraging the crowd.dev Zapier integration, you can create more efficient workflows, improve collaboration, and automate processes within your community. We are excited to see all the ways you guys will be using it and would love to hear your feedback!
 
 ## Better merge suggestions <PullRequest number="715" />
 
-We have completely redesigned the user experience for members' merge suggestions. The new UX is more intuitive and allows you to merge members faster.
+We have completely redesigned the user experience for member merge suggestions.
+Previously we received feedback that we didn’t include enough information in the merge preview.
+The new merge preview UX is more intuitive and allows you to merge members faster.
 Now we show you the full context that you need to determine whether two members should be merged immediately without opening the member profiles.
 We hope the new design will make the experience of merging members more enjoyable and productive.
 
