@@ -8,7 +8,7 @@ import { Flex } from "@chakra-ui/react";
 export const meta = {
   slug: "number-open-source-contributions",
   publishedAt: "2023-04-18T12:00",
-  title: "Identify members with most OSS contributions",
+  title: "Finding and fostering open-source contributors",
   headerImage:
     "https://user-images.githubusercontent.com/37874460/232742145-41b4c696-bd43-4320-b5e0-25dc4404a6b9.png",
   version: "v0.28.0",
@@ -99,55 +99,57 @@ export const meta = {
 ],
 };
 
-Today is the most heartwarming update we've ever released.
-While our core team is busy with long-term goals, this week's product growth was driven by our community.
-We would not be celebrating two significant product updates and several other improvements without their incredible efforts.
+Today’s update is a particularly special one for us. While our core team is busy with longer-term features, this week's product releases were driven by our community.
 
-It is truly inspiring to see our gifted external contributors leading the growth of our platform.
-We can't thank them enough for their commitment and invaluable input, which keeps our product flourishing.
+We would not be celebrating two significant updates without their incredible efforts. It is truly inspiring to see our gifted external contributors leading the growth of our platform. We can't thank them enough for their commitment, which keeps our product flourishing.
 
-We have started a [dedicated community page](https://www.crowd.dev/community) to celebrate all our outstanding contributors.
-We will recognize code contributors as well as feedback champions.
+We have started a [dedicated community page](https://www.crowd.dev/community) to celebrate them. We will recognize code contributors as well as feedback champions.
 
 ## Highlighting Open Source Contributions
 
-This week's major update aims to make these incredible contributions more accessible to every community and foster contributor growth.
+Fittingly, this week's update aims to make these incredible contributions more accessible to every community and foster contributor growth.
 
 <CenteredImage
   src="https://user-images.githubusercontent.com/37874460/232742372-afc47f24-fbbc-4c0b-817c-8b9e088c213f.png"
   maxWidth="100%"
 />
 
-Identifying the members more likely to contribute is crucial to growing your code contributions. To measure this, we are introducing the **number of open-source contributions** attribute for members,
-which measures how many code contributions they have made to any project.
-You can filter and sort members by it in the members' directory.
+Identifying community members that are more likely to contribute is crucial to growing your code contributions. To enable this, we are introducing the **number of open-source contributions** attribute for your community members. This attribute measures how many code contributions they have made to any project. You can filter and sort members by it in the members' directory.
 
-We recommend reaching out to these members, understanding their needs from your community, and giving them the best possible contributor onboarding.
+Once you have identified these community members. We recommend reaching out to them, understanding their needs from your community, and giving them the best possible contributor onboarding.
 
 ## Filtering Activities by Type and Channel
 
-You can also filter by channels now in crowd.dev.
-Channels are the medium in which the activity occurs within the source (repositories in GitHub or channels in Discord and Slack).
+You can now also filter by channels in crowd.dev. Channels are the medium in which the activity occurs within the source (repositories in GitHub or channels in Discord and Slack).
 
 <CenteredImage
   src="https://user-images.githubusercontent.com/37874460/232742126-b1ba8360-25a0-4ead-9885-1b3979cb8e8a.png"
   maxWidth="100%"
 />
 
-With this filter, you can get much more granularity in analyzing your community's activity.
-For example, you can find the stargazers for a specific repository and messages in your support channel.
+With this filter, you can get much more granular in analyzing your community's activity. For example, you can find the stargazers for a specific repository and messages in your support channel.
 
-The following steps will be to add this same filter to the members' directory to unlock insights like "members who have contributed to this repository." Stay tuned!
+Our nextstep will be to add this filter to the members' directory to unlock insights like "members who have contributed to this repository." Stay tuned!
 
 ## Other Bug Fixes and Improvements
 
-- Added support for negative filters to enhance the filtering functionality. <PullRequest number="720"/>
-- Enabled opening organizations in a new tab for better user experience. <PullRequest number="725"/>
-- Fixed an issue with deleting sample data on onboarding that prevented integration start. <PullRequest number="733"/>
-- Resolved the overwriting of members' joined date for Slack and Twitter integrations that was causing unrealistic spikes in members. <PullRequest number="729"/>
-- Fixed the displaying of certain activity types for more accurate representation. <PullRequest number="731"/>
-- Improved filtering in reports and list pages for better data analysis. <PullRequest number="730"/>
-- Corrected Discord threads to display the proper channel instead of the thread. <PullRequest number="726"/>
+- Fixed duplicate job titles for multiple organization members. <PullRequest number="765" author="@peoray"/>
+- Fixed typo in active leadership members widget. <PullRequest number="761" author="@peoray"/>
+- Added a link to signup from sign-in page. <PullRequest number="767" author="@yeganathan18"/>
+- Added an issue template for improvements. <PullRequest number="775" author="@yeganathan18"/>
+- Implemented channel filter in the frontend. <PullRequest number="727" author="@joanagmaia"/>
+- Improved end-to-end test for auth and onboarding. <PullRequest number="728" author="@gaspergrom"/>
+- Corrected typos. <PullRequest number="753" author="@erinmikailstaples"/>
+- Removed redundant type sanitization on creating activity types. <PullRequest number="737" author="@epipav"/>
+- Fixed the displaying of activity types. <PullRequest number="769" author="@gaspergrom"/>
+- Migrated to the new version of Formbricks. <PullRequest number="756" author="@gaspergrom"/>
+- Fixed API docs for member update. <PullRequest number="763" author="@joanreyero"/>
+- Added scripts to merge duplicated members. <PullRequest number="754" author="@themarolt"/>
+- Enhanced 500 errors display with non-invasive toast messages. <PullRequest number="744" author="@gaspergrom"/>
+- Fixed activity types filter's 500 error when the filter was reset. <PullRequest number="741" author="@joanagmaia"/>
+- Fixed organization's platform filter. <PullRequest number="738" author="@joanagmaia"/>
+- Changed the copy for the Zapier connect button. <PullRequest number="740" author="@garrrikkotua"/>
+- Implemented UI tweaks for the Zapier connector. <PullRequest number="749" author="@garrrikkotua"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
