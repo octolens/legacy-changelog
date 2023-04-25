@@ -116,13 +116,20 @@ If you have two members you know to be the same on a single platform, you can me
 
 ## Other Bug Fixes and Improvements
 
-- Added support for negative filters to enhance the filtering functionality. <PullRequest number="720"/>
-- Enabled opening organizations in a new tab for better user experience. <PullRequest number="725"/>
-- Fixed an issue with deleting sample data on onboarding that prevented integration start. <PullRequest number="733"/>
-- Resolved the overwriting of members' joined date for Slack and Twitter integrations that was causing unrealistic spikes in members. <PullRequest number="729"/>
-- Fixed the displaying of certain activity types for more accurate representation. <PullRequest number="731"/>
-- Improved filtering in reports and list pages for better data analysis. <PullRequest number="730"/>
-- Corrected Discord threads to display the proper channel instead of the thread. <PullRequest number="726"/>
+- Introduced multiple member identities for a single platform for improved merging. <PullRequest number="787"/>
+- Enhanced merge suggestions with the addition of confidence scoring. <PullRequest number="797"/>
+- Added a column to display the number of activities for all member views. <PullRequest number="789"/>
+- Implemented tooltips when displaying OSS contributions for better understanding. <PullRequest number="778"/>
+- Optimized materialized view for members to increase performance. <PullRequest number="803"/>
+- Updated the Formbricks version for improved functionality. <PullRequest number="801"/>
+- Fixed timeframe inaccuracies in members' report drawers. <PullRequest number="776"/>
+- Corrected the count values in platform filters on the homepage. <PullRequest number="781"/>
+- Made the number of activity displays for active members' view dependent on the timeframe. <PullRequest number="792"/>
+- Re-enabled the GitHub forms stream for streamlined integration. <PullRequest number="796"/>
+- Added missing indexes and removed unused ones for database optimization. <PullRequest number="798"/>
+- Resolved member upsert issues when called from integrations. <PullRequest number="793"/>
+- Merged duplicated members with extra identities to enhance merging accuracy. <PullRequest number="783"/>
+- Fixed copy and color discrepancies for the number of OSS contributions filter. <PullRequest number="777"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
