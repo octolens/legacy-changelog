@@ -1,0 +1,131 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "enhanced-merge-suggestions",
+  publishedAt: "2023-04-25T12:00",
+  title: "Enhanced Member Merging Algorithm with confidence scoring",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/234231615-23a6bc31-c381-401d-af69-61ca394a7bba.png",
+  version: "v0.28.0",
+  mainPullRequest: 797,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Emmanuel Raymond",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/23735423?v=4",
+    },
+  ],
+};
+
+We know how crucial it is to have accurate member identification in your community,
+and that's why we have significantly improved our merging suggestions algorithm.
+Our enhanced algorithm identifies potential merges more accurately and introduces a confidence score to help you make better decisions.
+
+### More Accurate Member Merge Suggestions
+
+Our improved algorithm analyzes members based on usernames and emails across different platforms, performing three types of checks:
+
+1. Checking if two usernames are the same on different platforms.
+2. Finding members that have overlapping emails.
+3. Lastly, we check for members with similar usernames. For example, _bertram_gilfoyle_ and _gilfoyle_ would be matched.
+
+This is a significant improvement from our previous algorithm,
+which only checked for the same usernames across different platforms with low accuracy.
+
+### Introducing Confidence Scoring
+
+We also introduced a confidence score indicating our algorithm's certainty about the suggestion. This will aid you in making well-informed decisions about potential merges. Usually, anything above 80% is good to go!
+
+It also opens the door for automatic merging. We are exploring different options, such as letting you set a minimum threshold above which two members would be automatically merged.
+
+Stay tuned for more exciting updates from our team. In the meantime, happy merging!
+
+## Multiple identities per member per platform
+
+We also upgraded our data structure to support having multiple identities for a member on a single platform.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/234231633-23b816ac-9adc-4157-802a-67e1564ee68a.png"
+  maxWidth="100%"
+/>
+
+If you have two members you know to be the same on a single platform, you can merge them without any loss of information. The two identities will co-exist.
+
+## Other Bug Fixes and Improvements
+
+- Added support for negative filters to enhance the filtering functionality. <PullRequest number="720"/>
+- Enabled opening organizations in a new tab for better user experience. <PullRequest number="725"/>
+- Fixed an issue with deleting sample data on onboarding that prevented integration start. <PullRequest number="733"/>
+- Resolved the overwriting of members' joined date for Slack and Twitter integrations that was causing unrealistic spikes in members. <PullRequest number="729"/>
+- Fixed the displaying of certain activity types for more accurate representation. <PullRequest number="731"/>
+- Improved filtering in reports and list pages for better data analysis. <PullRequest number="730"/>
+- Corrected Discord threads to display the proper channel instead of the thread. <PullRequest number="726"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
