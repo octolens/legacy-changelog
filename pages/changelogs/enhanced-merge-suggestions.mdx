@@ -80,16 +80,15 @@ export const meta = {
   ],
 };
 
-We know how crucial it is to have accurate member identification in your community,
-and that's why we have significantly improved our merging suggestions algorithm.
-Our enhanced algorithm identifies potential merges more accurately and introduces a confidence score to help you make better decisions.
+Having unified member profiles in your community is crucial. It's the only way to have a unified view and a source of truth for your community data.
+This week we significantly improved our merging suggestions algorithm: we identify potential merges more accurately and introduce a confidence score to help you make better decisions.
 
 ### More Accurate Member Merge Suggestions
 
 Our improved algorithm analyzes members based on usernames and emails across different platforms, performing three types of checks:
 
-1. Checking if two usernames are the same on different platforms.
-2. Finding members that have overlapping emails.
+1. Check if two members have identical usernames on different platforms.
+2. Find members that have overlapping emails.
 3. Lastly, we check for members with similar usernames. For example, _bertram_gilfoyle_ and _gilfoyle_ would be matched.
 
 This is a significant improvement from our previous algorithm,
@@ -97,15 +96,15 @@ which only checked for the same usernames across different platforms with low ac
 
 ### Introducing Confidence Scoring
 
-We also introduced a confidence score indicating our algorithm's certainty about the suggestion. This will aid you in making well-informed decisions about potential merges. Usually, anything above 80% is good to go!
+We also added a confidence score indicating the algorithm's certainty about the suggestion. This will aid you in making well-informed decisions about potential merges. Usually, any suggestion above 80% is good to go!
 
-It also opens the door for automatic merging. We are exploring different options, such as letting you set a minimum threshold above which two members would be automatically merged.
+The confidence score also opens the door for automatic merging. We are exploring letting you set a minimum threshold above which two members would be automatically merged, to reduce the manual work to a minimum.
 
-Stay tuned for more exciting updates from our team. In the meantime, happy merging!
+Stay tuned for more exciting updates. In the meantime, happy merging!
 
 ## Multiple identities per member per platform
 
-We also upgraded our data structure to support having multiple identities for a member on a single platform.
+We upgraded our data structure to support having multiple identities for a member on a single platform.
 
 <CenteredImage
   src="https://user-images.githubusercontent.com/37874460/234231633-23b816ac-9adc-4157-802a-67e1564ee68a.png"
