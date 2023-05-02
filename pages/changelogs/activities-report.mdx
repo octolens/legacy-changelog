@@ -1,0 +1,142 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "activity-report",
+  publishedAt: "2023-05-02T12:00",
+  title: "Unlocking Activity Insights",
+  headerImage:
+    "https://user-images.githubusercontent.com/37874460/229734259-c35c249a-7e0d-4ed4-811f-798c003d8e02.png",
+  headerVideo: "https://www.youtube.com/watch?v=n9Y6LSEcrSE",
+  version: "v0.30.0",
+  mainPullRequest: 724,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+Understanding the impact and engagement of your community's activities is essential for growth and retention. Are your monthly activities decreasing? If so, on what platform is this happening? Is it a longer-term trend? These are all important questions to answer to adjust your community tactics.
+
+We are excited to introduce a new report this week that will help you answer just these questions and more.
+
+## Introducing the Activities Report
+
+As the name suggests, this new report collects and readily displays important insights into your community's activity, helping you make informed decisions and adjust your community strategy accordingly. It is made up of four insightful widgets:
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/235636158-9d63f462-e2a1-4a64-aca4-b8394260549f.png"
+  maxWidth="100%"
+/>
+
+### Get Insights on Cumulative Activities
+
+The first widget in the Activities Report shows you the cumulative number of activities. This information allows you to monitor your community's performance throughout the project's life, serving as an excellent indication of its growth and popularity.
+
+### Track Activities Across Different Timeframes
+
+This widget sheds light on the number of activities today, this week, and this month. It also includes comparisons to the previous period and shows you the percentage increase or decrease in your numbers. By tracking these deltas across various timeframes, you can identify trends you can capitalize on or try to combat.
+
+### Analyze Daily/Weekly/Monthly Trends with an Interactive Graph
+
+The third widget presents an interactive graph displaying daily, weekly, or monthly new activities. It is not cumulative, providing you with an at-a-glance overview of the peaks and valleys in your activity levels. Understanding these trends allows you to tailor your strategies according to your community's most active periods.
+
+### Discover the Distribution of Activities Across Platforms
+
+The fourth widget showcases a table describing the distribution of different activities by type and platform. You can learn essential insights, such as the percentage of your stargazers who also follow you on Twitter or compare messages on Discord with more passive activities. This information will help you optimize your approach in the various channels to ensure optimal engagement.
+
+Check out your Activity Report by navigating to your Reports section and gain valuable insights into your community's behavior. As with all our reports, you can also share them with stakeholders with a link. Maybe you want to let your investors see your progress or simply share your numbers with your community. We've handled the hard part, so sit back, explore the data, and make the most of your community interactions!
+
+## A more powerful GitHub integration
+
+Tracking the frequency and trends of Activities is important, just as important is keeping a good overview of what types of activities are happening. For an even more granular view of your GitHub community, we now differentiate between different Pull Request events.
+
+<CenteredImage
+  src="https://user-images.githubusercontent.com/37874460/235636147-07f3bc2c-24c8-413a-8557-b9d62fb479bf.png"
+  maxWidth="100%"
+/>
+
+The PR events we now track include:
+
+- Open
+- Assign
+- Review requested
+- Review
+- Review comments
+- Merge
+- Closed
+
+To be able to see these events you will need to re-connect your GitHub integration. All you have to do is head to the integrations page and authorize crowd.dev for GitHub. Just make sure you have admin rights for your GitHub organization.
+
+By keeping track of these different PR events, you can now gain even more visibility into your community’s behavior and make decisions for your project’s growth and success.
+
+## Other Bug Fixes and Improvements
+
+- Fixed a rendering issue in the members' list for cases with null emails. <PullRequest number="817"/>
+- Corrected the handle sent when fetching enrichments with GitHub integration. <PullRequest number="820"/>
+- Improved detection of existing and actual member mismatches when upserting members. <PullRequest number="804"/>
+- Resolved merge suggestions failure caused by a new database index. <PullRequest number="816"/>
+- Fixed the display of new badges in the dashboard for active members. <PullRequest number="815"/>
+- Refined existing member retrieval by removing filtering by is_latest to solve upsert issues. <PullRequest number="814"/>
+- Addressed an issue with creating custom activities from the frontend due to a missing username field. <PullRequest number="808"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
