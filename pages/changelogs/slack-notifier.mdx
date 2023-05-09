@@ -96,13 +96,10 @@ and sentiment, so you can quickly react to activities with negative sentiment.
 
 ## Other Bug Fixes and Improvements
 
-- Fixed a rendering issue in the members' list for cases with null emails. <PullRequest number="817"/>
-- Corrected the handle sent when fetching enrichments with GitHub integration. <PullRequest number="820"/>
-- Improved detection of existing and actual member mismatches when upserting members. <PullRequest number="804"/>
-- Resolved merge suggestions failure caused by a new database index. <PullRequest number="816"/>
-- Fixed the display of new badges in the dashboard for active members. <PullRequest number="815"/>
-- Refined existing member retrieval by removing filtering by is_latest to solve upsert issues. <PullRequest number="814"/>
-- Addressed an issue with creating custom activities from the frontend due to a missing username field. <PullRequest number="808"/>
+- Added missing indexes for querying members. <PullRequest number="832"/>
+- Incoming Webhook fixes and LinkedIn integration optimization. <PullRequest number="830"/>
+- Memory optimizations for processing integrations. <PullRequest number="827"/>
+- Update the Zapier integration instructions. <PullRequest number="824"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
