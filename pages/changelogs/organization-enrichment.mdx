@@ -1,0 +1,152 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "organization-enrichment",
+  publishedAt: "2023-05-16T12:00",
+  title: "Enrich your community with organization insights",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/446c0c34-257d-4fa2-a15d-e21a0f72f2f3",
+  version: "v0.31.0",
+  mainPullRequest: 825,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Jesse Ighor",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05460EVA15-8fc3a5286a87-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Arya Choudhury",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/16665888?v=4",
+    },
+    {
+      name: "Yeganathan S",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+  ],
+};
+
+A deep understanding of the organizations taking an interest in or adopting your product is essential for a robust community strategy to fuel growth. Grasping the makeup of your audience, uncovering hidden industry segments, and identifying qualified leads with high community adoption companies can significantly impact your growth trajectory.
+
+Our Organizations page already shows you which organizations are represented in your community. However, the information provided is fairly standard, drawing on what is available on GitHub.
+
+Today, we unveil our automated organization enrichment feature, which considerably bulks up this data. Exclusive to our Growth customers, organizations will be populated with valuable details such as company size, industry, description,location, and more.
+
+### Sit back and let the enrichment work its magic
+
+If you're a Growth customer, there's no need to lift a finger! We will automatically select 200 organizations, prioritizing those that are most active and joined the community recently, and enrich them with crucial insights. We'll refresh the list and run this process every month.
+
+### What information can you expect?
+
+Our automated enrichment provides a wealth of essential information:
+
+- Headline: A succinct one-liner on the organization.
+- Description: A more elaborate depiction of the organization's activities.
+- Identities: Organization profiles on other platforms, such as Twitter, LinkedIn, and Crunchbase.
+- Industry: The company's operational field, e.g., "Computer Software".
+- Number of employees: A precise headcount working for the organization.
+- Location: The organization's geographical site.
+- Founded: The year the company was established.
+- Size: A ballpark estimate of employee numbers.
+- Type: Indicates whether the organization is private or public.
+
+While we cannot guarantee every data point's availability, we are committed to providing as much information as possible.
+
+### Maximize the impact of the enriched data
+
+You can use the data in numerous ways, for instance:
+
+- Find out which industries are most interested in your community and product focus your efforts on the right audience.
+- Grasp the size and scope of the organizations in your community to validate your go-to-market strategy or uncover hidden segments, factoring in both size and industry.
+- Get to know the represented locations to organize community events and meetups in relevant places.
+
+With these new data insights, we will soon release an organizations report to help you automatically address these questions and more. Stay tuned for that exciting update!
+
+## Other Bug Fixes and Improvements
+
+- Soft-delete integrations when removing them. <PullRequest number="855"/>
+- Change all tab titles to match page titles. <PullRequest number="819"/>
+- Replaced the Twitter connection flow to use Zapier. <PullRequest number="846"/>
+- Added test for members' filters. <PullRequest number="790"/>
+- Align the member profile icon and copy. <PullRequest number="822"/>
+- Fix how activity types were being displayed. <PullRequest number="851"/>
+- Fix the filter for custom activity types. <PullRequest number="843"/>
+- Fix an issue where the Slack notifier webhook was being overwritten. <PullRequest number="856"/>
+- Move all activity types and platforms to lowercase. <PullRequest number="849"/>
+- Replaced the Nango CLI with an API call. <PullRequest number="850"/>
+- Fix how activity types were displayed in the dashboard. <PullRequest number="847"/>
+- Fix type errors that were causing problems in the front end. <PullRequest number="841"/>
+- Check if team members did activities for automation. <PullRequest number="845"/>
+- Bug fixes and improvements in the automation feature. <PullRequest number="840"/>
+- Fix the URL encoding. <PullRequest number="818"/>
+- Fix activities parsed from GitHub webhooks. <PullRequest number="839"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
