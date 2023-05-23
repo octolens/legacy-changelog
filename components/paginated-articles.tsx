@@ -48,7 +48,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
           <Divider my={[10, 16]} />
           <VStack spacing={16} divider={<Divider />}>
             {children}
-            {/* <VStack align={["stretch", "stretch", "center"]}>
+            <VStack align={["stretch", "stretch", "center"]}>
               {page === 0 ? (
                 <Link href="/page/1">
                   <Button variant="landingOutline" size="landingLg">
@@ -71,7 +71,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
                   </Link>
                 </HStack>
               )}
-            </VStack> */}
+            </VStack>
           </VStack>
         </Container>
         <TryBanner _wrapper={{ mt: [50, 50, 120] }} />
