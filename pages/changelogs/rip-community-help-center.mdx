@@ -1,0 +1,141 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "rip-community-help-center",
+  publishedAt: "2023-06-06T12:00",
+  title: "RIP Community Help center",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/b3072f19-6186-446a-811d-389417235a0c",
+  mainPullRequest: 872,
+  version: "v0.32.1",
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Jesse Ighor",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05460EVA15-8fc3a5286a87-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Yash Sharma",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/97662335?v=4",
+    },
+    {
+      name: "Dhruwang Jariwala",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/67850763?v=4",
+    },
+  ],
+};
+
+This week, we're bidding farewell to our Community Help Center feature.
+As a dedicated team, our priority is to continuously enhance our product to better serve your needs.
+This means revisiting our features and ensuring they provide the utmost value to you.
+Unfortunately, the Community Help Center didn't gain the traction we had hoped for,
+and we've decided to sunset it to allocate our limited resources toward features that align more with our vision and your requests.
+We deeply appreciate your understanding as we focus on delivering a more intuitive and efficient product experience.
+For those who valued the Community Help Center, don't worry - just reach [out to us](mailto:help@crowd.dev) and we'll gladly lend a hand
+in setting up a similar solution tailored to your needs.
+
+## Our new integrations are being rolled out progressively
+
+Two weeks ago we announced that we were working on a new integration framework to improve the reliability and performance of our integrations.
+We're glad to announce that we have started rolling it out for the LinkedIn, DEV, and Stack Overflow integrations.
+Over the next week or two we'll be rolling it out to the rest of our integrations.
+
+Since we are dealing with a lot of external data, errors sometimes are inevitable.
+However, our process for handling and reacting to these errors needed some love.
+We improved our alerting system to notify the team internally when anything goes wrong with an integration.
+Once an integration fails, we will be notified and will move quickly to resolve the issue, before you even notice it.
+
+## Working on speed optimizations
+
+Some of you have noticed that lately, crowd.dev has been slow. We've been working on improving the speed of our application,
+but the truth is some of the improvements we've tried haven't worked. We have now identified a solution that we are confident will work.
+We are optimistic that we will have good news to share with you in two weeks.
+In the meantime, we would like to thank you for your patience and understanding.
+
+## Other Bug Fixes and Improvements
+
+- Implemented soft-delete for integrations when removed. <PullRequest number="855"/>
+- Aligned tab titles with respective page titles. <PullRequest number="819"/>
+- Updated the Twitter connection flow to utilize Zapier. <PullRequest number="846"/>
+- Introduced a test for members' filters. <PullRequest number="790"/>
+- Adjusted the member profile icon and copy alignment. <PullRequest number="822"/>
+- Fixed display issue with unknown platform images. <PullRequest number="868"/>
+- Resolved an issue with empty activity types. <PullRequest number="869"/>
+- Added slack notifier environment values to the distributable environment. <PullRequest number="879"/>
+- Fixed Google signup issues. <PullRequest number="883"/>
+- Included identities in organization enrichment. <PullRequest number="882"/>
+- Removed organization profiles, rendering them as identities. <PullRequest number="884"/>
+- Optimized activity display in Slack automations. <PullRequest number="888"/>
+- Implemented a payload for automation. <PullRequest number="892"/>
+- Corrected typos in the Slack notifier. <PullRequest number="894"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
