@@ -90,41 +90,41 @@ export const meta = {
   ],
 };
 
-This week, we bid farewell to our Community Help Center feature. As a team, our priority is to continuously enhance our product to better serve your needs. This means revisiting our features and ensuring they provide the utmost value to you.
+This week, we bid farewell to our Community Help Center feature. As a team, we prioritize continuously enhancing our product to serve your needs better. This means revisiting our features and ensuring they provide the utmost value to you.
 
 Unfortunately, the Community Help Center didn't gain the traction we had hoped for, and we've decided to sunset it to allocate our limited resources toward features that align more with our vision and your requests. We appreciate your understanding as we focus on delivering a more intuitive and efficient product experience.
 For those who valued the Community Help Center, don't worry - just [reach out to us](mailto:help@crowd.dev), and we'll gladly lend a hand in setting up a similar solution tailored to your needs.
 
 ## Our integration improvements are rolling out <PullRequest number="972"/>
 
-Two weeks ago we announced that we're working on a new integration framework to improve the reliability and performance of our integrations. We're glad to announce that we have started rolling it out for the LinkedIn, DEV, and Stack Overflow integrations. Over the next week or two we'll be rolling it out to the remaining ones.
+Two weeks ago, we announced that we're working on a new integration framework to improve the reliability and performance of our integrations. We're glad to announce that we have started rolling it out for the LinkedIn, DEV, and Stack Overflow integrations. Over the next week or two, we'll roll it out to the remaining ones.
 
-Since we're dealing with a lot of external data sources, our process for handling and reacting to any errors needed some love. We improved our alerting system to notify the team internally when anything goes wrong with an integration. If an integration fails, we will be notified and will move as quickly as possible to resolve the issue, before you even notice it.
+Since we're dealing with many external data sources, our process for handling and reacting to errors needed some love. We improved our alerting system to notify the team internally when anything goes wrong with an integration. If an integration fails, we get notified and will move quickly to resolve the issue before you get affected.
 
 ## Working on speed optimizations
 
-Some of you have noticed that crowd.dev has had some longer loading times. We hear you and have been working on improving the speed of our application, but the truth is some of what we have tried has failed to show a significant performance increase. We have now identified a solution that we are confident will work. We are optimistic that we will have good news to share with you in two weeks. In the meantime, we would like to thank you for your patience and understanding.
+Some of you have noticed that crowd.dev has had longer loading times. We hear you and have been working on improving the speed of our application, but the truth is some of what we have tried has yet to show a significant performance increase. We have now identified a solution that we are confident will work. We are optimistic that we will have good news to share with you in two weeks. In the meantime, we would like to thank you for your patience and understanding.
 
 ## Other Bug Fixes and Improvements
 
 - Optimized the webhook service to retry errored webhooks for greater resilience. <PullRequest number="923"/>
-- Fixed a cosmetic issue when the data for a members' organization was not complete. <PullRequest number="930"/>
+- Fixed a cosmetic issue when the data for a members' organization was incomplete. <PullRequest number="930"/>
 - Added support for autocomplete in IDEs for new services. <PullRequest number="931"/>
 - Improved the logic for the display banner for errored integrations. <PullRequest number="914"/>
-- Improved how members are displayed on the organizations and activities pages. <PullRequest number="939"/>
+- Improved how members display on the organizations and activities pages. <PullRequest number="939"/>
 - Added the proper logos and copies on the authorization pages. <PullRequest number="940"/>
 - Optimized the member enrichment feature to be synchronous when enriching only one member. <PullRequest number="937"/>
 - Changed the copy of the HubSpot integration CTA. <PullRequest number="921"/>
 - Moved the Stack Overflow integration to the new framework. <PullRequest number="936"/>
 - Fixed a bug where integrations were overwriting existing organization data for members. <PullRequest number="935"/>
-- Added support to manually process integrations in the new integration framework. <PullRequest number="928"/>
+- Added support to process integrations in the new integration framework manually. <PullRequest number="928"/>
 - Fixed entry points in Docker. <PullRequest number="929"/>
 - Fixed a bug caused by incorrect handling in the members' page of an empty _active on_ field. <PullRequest number="925"/>
 - Fixed local issues related to feature flags and the new services in development mode. <PullRequest number="927"/>
 - Added proper coloring for charts for the Discourse integration. <PullRequest number="918"/>
 - Fixed an early return issue for webhook retries. <PullRequest number="917"/>
 - Fixed an edge case related to named parameters in Postgres. <PullRequest number="944"/>
-- Take into account empty sentiment values when calculating the average sentiment for a member. <PullRequest number="943"/>
+- Consider empty sentiment values when calculating the average sentiment for a member. <PullRequest number="943"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
