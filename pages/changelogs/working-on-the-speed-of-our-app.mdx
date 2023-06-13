@@ -1,0 +1,111 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "working-on-the-speed-of-our-app",
+  publishedAt: "2023-06-13T12:00",
+  title: "Working on the speed of our app",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/686e1547-f7e0-4827-9ac4-1596a7f5ce3d",
+  mainPullRequest: 971,
+  version: "v0.34.1",
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Jesse Ighor",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05460EVA15-8fc3a5286a87-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+This week, we focused entirely on long-term work and optimizations.
+Currently, the biggest weakness of our app is its slowness and maturity. We are working extensively and almost exclusively on these issues since we believe that making fast progress will bring more value than any new features or improvements.
+
+## Improving the speed of our app
+
+We are adding Open Search to our stack to offer you snappy filtering on your community members. We have been doing performance tests, and the results are very encouraging. We are hoping to release this in the next two weeks. After, we will be rolling it out for organizations and activities.
+
+## More integrations transformed to the new framework
+
+Last week, we announced a more reliable and performant integration framework.
+We have now also moved the Stack Overflow, Reddit, and HackerNews integrations to the new framework, in addition to LinkedIn and DEV that were already there.
+
+## Other Bug Fixes and Improvements
+
+- Moved the Reddit integration to the new framework. <PullRequest number="961"/>
+- Moved the HackerNews integration to the new framework. <PullRequest number="971"/>
+- Added missing indexes for improved performance. <PullRequest number="957"/>
+- Implemented a job for cleaning up audit logs. <PullRequest number="946"/>
+- Removed the search engine that was powering the Community Help Centre. <PullRequest number="950"/>
+- Wrapped boolean values with quotes in the CLI. <PullRequest number="966"/>
+- Fixed a bug with a missing `return` statement in Stack Overflow integration. <PullRequest number="973"/>
+- Added a fix for Stack Overflow returning deleted users. <PullRequest number="970"/>
+- Fixed a bug related to GitHub commits. <PullRequest number="969"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
