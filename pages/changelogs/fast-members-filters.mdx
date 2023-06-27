@@ -117,13 +117,21 @@ to continue getting LinkedIn data.
 
 ## Other Bug Fixes and Improvements
 
-- Getting only public repos that are not forks. <PullRequest number="959"/>
-- Error logging for weekly emails worker. <PullRequest number="811"/>
-- Update README. <PullRequest number="985"/>
-- Upgrade `nginx` version to 1.24. <PullRequest number="980"/>
-- Refactor Slack Alerting and support it in the new integration framework. <PullRequest number="979"/>
-- Fix analytics env setting. <PullRequest number="998"/>
-- Fix activities timestamp. <PullRequest number="976"/>
+- Added member and display object to activity's parent. <PullRequest number="987"/>
+- Reduced Cube.js requests from the dashboard. <PullRequest number="1010"/>
+- Updated `CONTRIBUTORS.md` for running services individually. <PullRequest number="1029"/>
+- Implemented tenant-wide template reports with segments. <PullRequest number="1011"/>
+- Integrated Git with segments and improved GitHub integration. <PullRequest number="994"/>
+- Moved exclusion filters to frontend operators. <PullRequest number="1033"/>
+- Fixed error in GitHub integration with the missing author. <PullRequest number="1036"/>
+- Resolved pagination error on members' page. <PullRequest number="1023"/>
+- Added retry functionality for weekly emails. <PullRequest number="1007"/>
+- Fixed member photo display issue. <PullRequest number="1034"/>
+- Rectified errors in range-based filters. <PullRequest number="1037"/>
+- Enabled email querying using wildcards in members' searches. <PullRequest number="1024"/>
+- Solved OpenSearch sorting issue for reach. <PullRequest number="1022"/>
+- Fixed custom mapping with OpenSearch. <PullRequest number="1019"/>
+- Renamed event tracking service for clarity. <PullRequest number="1008"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
