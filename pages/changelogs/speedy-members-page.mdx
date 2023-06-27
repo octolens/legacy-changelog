@@ -1,0 +1,133 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "speedy-members-page",
+  publishedAt: "2023-06-27T12:00",
+  title: "Speedy Members Page",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/8a6878ae-f862-40f7-901c-d480fbe02ba4",
+  mainPullRequest: 1013,
+  version: "v0.36.0",
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Jesse Ighor",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05460EVA15-8fc3a5286a87-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Dhruwang Jariwala",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/67850763?v=4",
+    },
+  ],
+};
+
+If you have been reading our changelog recently, you will have noticed that our main focus was to improve the performance of accessing and filtering your community data, especially for the members' directory.
+
+We are thrilled to announce filtering for your community members in under one second! The page has never been snappier, and when you switch tabs in the member's directory, the transition will feel almost instantaneous. This speed optimization is a massive improvement for communities with large numbers of members, and we are excited to see how this will improve your experience with crowd.dev.
+
+By syncing all members' data to OpenSearch, an open-source distribution of Elasticsearch, we've managed to significantly speed up queries. This advancement also allows us to provide more advanced filters in the future. Next, we will build the same for the activities and organizations pages. Stay tuned!
+
+## Faster integrations <PullRequest number="1026"/>
+
+We also optimized how we check for the existence of community members when ingesting data from integrations. Integrations will now be faster.
+
+With this fix and the deployment of OpenSearch, we have reduced the load on the database by half, resulting in a stable product and a better experience for you.
+
+## Moved the LinkedIn integration to the new API <PullRequest number="1035"/>
+
+LinkedIn announced some weeks ago that they are deprecating the API we are using and introducing a new community API.
+
+We've gained access to this new API and successfully moved the integration over. Please note that you will need to re-authenticate to continue receiving LinkedIn data.
+
+## Other Bug Fixes and Improvements
+
+- Added member and display object to activity's parent. <PullRequest number="987"/>
+- Reduced Cube.js requests from the dashboard. <PullRequest number="1010"/>
+- Updated `CONTRIBUTORS.md` for running services individually. <PullRequest number="1029"/>
+- Implemented tenant-wide template reports with segments. <PullRequest number="1011"/>
+- Integrated Git with segments and improved GitHub integration. <PullRequest number="994"/>
+- Moved exclusion filters to frontend operators. <PullRequest number="1033"/>
+- Fixed error in GitHub integration with the missing author. <PullRequest number="1036"/>
+- Resolved pagination error on members' page. <PullRequest number="1023"/>
+- Added retry functionality for weekly emails. <PullRequest number="1007"/>
+- Fixed member photo display issue. <PullRequest number="1034"/>
+- Rectified errors in range-based filters. <PullRequest number="1037"/>
+- Enabled email querying using wildcards in members' searches. <PullRequest number="1024"/>
+- Solved OpenSearch sorting issue for reach. <PullRequest number="1022"/>
+- Fixed custom mapping with OpenSearch. <PullRequest number="1019"/>
+- Renamed event tracking service for clarity. <PullRequest number="1008"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
