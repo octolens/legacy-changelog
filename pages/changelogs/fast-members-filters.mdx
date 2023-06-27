@@ -1,0 +1,132 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "fast-members-filters",
+  publishedAt: "2023-06-27T12:00",
+  title: "Filter your community members in under 1s!",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/fe8395b5-6309-448f-a1e6-30917d761388",
+  mainPullRequest: 978,
+  version: "v0.36.0",
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Jesse Ighor",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05460EVA15-8fc3a5286a87-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Dhruwang Jariwala",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/67850763?v=4",
+    },
+  ],
+};
+
+If you have been reading our changelog, you will have noticed that one of our main focuses the last weeks
+was to improve the performance of accessing and filtering your community data, especially for the members' directory.
+
+We are thrilled to announce filtering for your community members in under one second! The page should now feel snappy,
+and when you change tabs in the member's directory, you will notice a close-to-instant behavior. This speed optimization is a massive improvement
+for communities with many members, and we are excited to see how this will improve your experience with crowd.dev.
+
+We achieved this by syncing all members' data to OpenSearch, an open-source distribution of Elastic Search.
+OpenSearch allows us to query the data much faster, and we can now also implement more advanced filters in the future.
+Next, we will build the same for the activities and organizations pages. Stay tuned!
+
+## Faster integrations <PullRequest number="1026"/>
+
+We also optimized how we check for the existence of community members when ingesting data from integrations. Integrations will now be faster.
+
+With this fix and the deployment of OpenSearch, we have reduced the load on the database by half, resulting in a stable product
+and a better experience for you.
+
+## Moved the LinkedIn integration to the new API <PullRequest number="1035"/>
+
+LinkedIn announced some weeks ago that they are deprecating the API we are using and introducing a new community API.
+
+We have gotten access and moved the integration to the new API. However, this means you will have to re-authenticate
+to continue getting LinkedIn data.
+
+## Other Bug Fixes and Improvements
+
+- Getting only public repos that are not forks. <PullRequest number="959"/>
+- Error logging for weekly emails worker. <PullRequest number="811"/>
+- Update README. <PullRequest number="985"/>
+- Upgrade `nginx` version to 1.24. <PullRequest number="980"/>
+- Refactor Slack Alerting and support it in the new integration framework. <PullRequest number="979"/>
+- Fix analytics env setting. <PullRequest number="998"/>
+- Fix activities timestamp. <PullRequest number="976"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
