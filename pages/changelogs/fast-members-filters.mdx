@@ -8,7 +8,7 @@ import { Flex } from "@chakra-ui/react";
 export const meta = {
   slug: "fast-members-filters",
   publishedAt: "2023-06-27T12:00",
-  title: "Load and filter your community members in under one second",
+  title: "Our new Lightning-fast Members Page",
   headerImage:
     "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/fe8395b5-6309-448f-a1e6-30917d761388",
   mainPullRequest: 1013,
@@ -90,30 +90,23 @@ export const meta = {
   ],
 };
 
-If you have been reading our changelog, you will have noticed that one of our main focuses the last weeks
-was to improve the performance of accessing and filtering your community data, especially for the members' directory.
+If you have been reading our changelog recently, you will have noticed that our main focus was to improve the performance of accessing and filtering your community data, especially for the members' directory.
 
-We are thrilled to announce filtering for your community members in under one second! The page should now feel snappy,
-and when you change tabs in the member's directory, you will notice a close-to-instant behavior. This speed optimization is a massive improvement
-for communities with many members, and we are excited to see how this will improve your experience with crowd.dev.
+We are thrilled to announce filtering for your community members in under one second! The page has never been snappier, and when you switch tabs in the member's directory, the transition will feel almost instantaneous. This speed optimization is a massive improvement for communities with large numbers of members, and we are excited to see how this will improve your experience with crowd.dev.
 
-We achieved this by syncing all members' data to OpenSearch, an open-source distribution of Elastic Search.
-OpenSearch allows us to query the data much faster, and we can now also implement more advanced filters in the future.
-Next, we will build the same for the activities and organizations pages. Stay tuned!
+By syncing all members' data to OpenSearch, an open-source distribution of Elasticsearch, we've managed to significantly speed up queries. This advancement also allows us to provide more advanced filters in the future. Next, we will build the same for the activities and organizations pages. Stay tuned!
 
 ## Faster integrations <PullRequest number="1026"/>
 
 We also optimized how we check for the existence of community members when ingesting data from integrations. Integrations will now be faster.
 
-With this fix and the deployment of OpenSearch, we have reduced the load on the database by half, resulting in a stable product
-and a better experience for you.
+With this fix and the deployment of OpenSearch, we have reduced the load on the database by half, resulting in a stable product and a better experience for you.
 
 ## Moved the LinkedIn integration to the new API <PullRequest number="1035"/>
 
 LinkedIn announced some weeks ago that they are deprecating the API we are using and introducing a new community API.
 
-We have gotten access and moved the integration to the new API. However, this means you will have to re-authenticate
-to continue getting LinkedIn data.
+We've gained access to this new API and successfully moved the integration over. Please note that you will need to re-authenticate to continue receiving LinkedIn data.
 
 ## Other Bug Fixes and Improvements
 
