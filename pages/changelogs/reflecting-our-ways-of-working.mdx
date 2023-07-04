@@ -6,13 +6,13 @@ import CodeBlock from "components/code-block.tsx";
 import { Flex } from "@chakra-ui/react";
 
 export const meta = {
-  slug: "speedy-members-page",
-  publishedAt: "2023-06-27T12:00",
-  title: "Speedy Members Page",
+  slug: "reflecting-our-ways-of-working",
+  publishedAt: "2023-07-04T12:00",
+  title: "Reflecting our ways of working",
   headerImage:
-    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/8a6878ae-f862-40f7-901c-d480fbe02ba4",
-  mainPullRequest: 1013,
-  version: "v0.36.0",
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/851e02cb-d5be-410e-8a91-2e623e64b8f3",
+  mainPullRequest: 1046,
+  version: "v0.37.0",
   authors: [
     {
       name: "Nuno Eufrasio",
@@ -73,35 +73,52 @@ export const meta = {
         "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
     },
     {
-      name: "Yeganathan S",
+      name: "Peer Richelsen",
       description: "External contributor",
-      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
-    },
-    {
-      name: "Dhruwang Jariwala",
-      description: "External contributor",
-      avatarUrl: "https://avatars.githubusercontent.com/u/67850763?v=4",
+      avatarUrl: "https://avatars.githubusercontent.com/u/8019099?v=4",
     },
   ],
 };
 
-If you have been reading our changelog recently, you will have noticed that our main focus was to improve the performance of accessing and filtering your community data, especially for the members' directory.
+We don't have major product updates this week, but we are setting ourselves up internally to ship even more.
 
-We are thrilled to announce filtering for your community members in under one second! The page has never been snappier, and when you switch tabs in the member's directory, the transition will feel almost instantaneous. This speed optimization is a massive improvement for communities with large numbers of members, and we are excited to see how this will improve your experience with crowd.dev.
+Last week we had our team offsite in Croatia. We had a great time together, which is essential for a distributed team like ours.
+However, there was also time for meaningful work. We had extended discussions about how we work and reached some fascinating conclusions that will impact the product immensely.
 
-By syncing all members' data to OpenSearch, an open-source distribution of Elasticsearch, we've managed to significantly speed up queries. This advancement also allows us to provide more advanced filters in the future. Next, we will build the same for the activities and organizations pages. Stay tuned!
+### Open and better documentation
 
-## Faster integrations <PullRequest number="1026"/>
+One area that will benefit our users, our contributors, and our team is improving our documentation.
+We currently need to be using more tools to document our work, which causes confusion and makes it hard to find the correct information
+or to keep it up to date. We will centralize all of our documentation into one tool.
 
-We also optimized how we check for the existence of community members when ingesting data from integrations. Integrations will now be faster.
+We also believe in the power of openness, so we will make as much of our documentation public as possible.
+There is a lot of valuable information in our technical and internal processes documentation that could be useful
+to our contributors, users, or even fellow open-source projects. We will be working on making it accessible to everyone.
 
-With this fix and the deployment of OpenSearch, we have reduced the load on the database by half, resulting in a stable product and a better experience for you.
+### Workshops and knowledge sharing
 
-## Moved the LinkedIn integration to the new API <PullRequest number="1035"/>
+We have a lot of knowledge in our team, and we want to ensure everyone can benefit from it. Even within the team,
+we still need ways to transfer knowledge between members. We will organize regular workshops, where someone from the team
+will present a topic they are knowledgeable about. We will cover both technical and non-technical topics.
 
-LinkedIn announced some weeks ago that they are deprecating the API we are using and introducing a new community API.
+When possible, we will also share these workshops with our community to benefit everyone.
 
-We've gained access to this new API and successfully moved the integration over. Please note that you will need to re-authenticate to continue receiving LinkedIn data.
+### Monitoring and infrastructure
+
+We have identified that we need to improve our monitoring to make crowd.dev more reliable and stable. We will be working on
+implementing a monitoring solution will allow us to detect issues before they happen and react to them faster.
+
+### Areas of ownership
+
+We have a lot of fantastic ideas for how to bring crowd.dev forward, and we want to make sure that we are working on the
+right things and quality does not suffer.
+We will define ownership areas for each team member, so everyone knows what they are responsible for and what they can work on.
+This will also help us ensure that each crucial product area gets its love and attention.
+
+## Fast active members' widgets
+
+Following on from last week's speed update, we have made another improvement to the speed of the widgets that show active members.
+This widget is important in the home dashboard and the members' default report and it is now loading much faster.
 
 ## Other Bug Fixes and Improvements
 
@@ -112,14 +129,6 @@ We've gained access to this new API and successfully moved the integration over.
 - Integrated Git with segments and improved GitHub integration. <PullRequest number="994"/>
 - Moved exclusion filters to frontend operators. <PullRequest number="1033"/>
 - Fixed error in GitHub integration with the missing author. <PullRequest number="1036"/>
-- Resolved pagination error on members' page. <PullRequest number="1023"/>
-- Added retry functionality for weekly emails. <PullRequest number="1007"/>
-- Fixed member photo display issue. <PullRequest number="1034"/>
-- Rectified errors in range-based filters. <PullRequest number="1037"/>
-- Enabled email querying using wildcards in members' searches. <PullRequest number="1024"/>
-- Solved OpenSearch sorting issue for reach. <PullRequest number="1022"/>
-- Fixed custom mapping with OpenSearch. <PullRequest number="1019"/>
-- Renamed event tracking service for clarity. <PullRequest number="1008"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
