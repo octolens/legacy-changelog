@@ -10,7 +10,7 @@ export const meta = {
   publishedAt: "2023-07-11T12:00",
   title: "Sign-in with GitHub",
   headerImage:
-    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/8a6878ae-f862-40f7-901c-d480fbe02ba4",
+    "https://user-images.githubusercontent.com/41432658/252609347-4c56d0e2-b390-4cfc-a444-d3ca1a322565.png",
   mainPullRequest: 983,
   version: "v0.37.0",
   authors: [
