@@ -6,7 +6,7 @@ import CodeBlock from "components/code-block.tsx";
 import { Flex } from "@chakra-ui/react";
 
 export const meta = {
-  slug: "sso-with-GitHub",
+  slug: "sso-with-github",
   publishedAt: "2023-07-11T12:00",
   title: "Sign-in with GitHub",
   headerImage:
@@ -88,6 +88,7 @@ export const meta = {
 We're excited to announce that you can now use your GitHub account for single sign-on (SSO), making onboarding easier and enabling open-source maintainers to enjoy the benefits of SSO. For enterprises with elevated compliance and security requirements, our new Scale plan now includes SAML-based SSO. Additionally, we've improved data accuracy by automatically assigning members to organizations based on their email domain and filling out job titles from member enrichment. Enjoy these updates, and reach out to us (e.g. on Discord) if you have any questions or need help.
 
 ## SSO with GitHub <PullRequest number="983"/>
+
 Most of our users are open-source companies. Therefore, naturally use GitHub to store their code, discuss with their community, or organize internal workflows.
 
 So far, we only supported single sign-on (SSO) with Google. Starting today, you can also use your GitHub account to create a new crowd.dev account or sign-in to your existing one.
@@ -95,16 +96,19 @@ So far, we only supported single sign-on (SSO) with Google. Starting today, you 
 This should make the onboarding process even easier and especially allow open-source maintainers, who usually don’t have a Google Workspace for their project, to get the benefits of SSO - namely, more secure and easy access to your data.
 
 SSO with GitHub is available in all plans.
- 
+
 ## Assign members to organizations based on their email domain <PullRequest number="1086"/>
+
 Having sound a clean data is crucial to execute any kind of GTM strategy. With this week’s release we are now able to automatically detect a member’s organization based on the domain of their email address.
 
 This can, for example, be used to assign community members from your Slack community to an organization and, by that, allow you to execute account-based marketing (ABM).
 
 ## Fill out job title from member enrichment <PullRequest number="1081"/>
+
 So far, we stored the job title from our member enrichment feature in an attribute called “work experience”. With this new release, we automatically populate the member’s job title with the latest job title from their work experience, if the field is empty. If a member already has a job title, we don’t overwrite it to make sure we are not deleting any of your data.
 
 ## Other Bug Fixes and Improvements
+
 - Fixed Eagle Eye onboarding wizard. <PullRequest number="1014"/>
 - Added `activitives.platform` to some cubejs pre-aggregations. <PullRequest number="1076"/>
 - Added missing database indexes. <PullRequest number="1075"/>
@@ -127,3 +131,5 @@ export default ({ children, ...rest }) => (
     {children}
   </MdxLayout>
 );
+
+;
