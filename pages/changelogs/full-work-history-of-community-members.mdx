@@ -6,9 +6,9 @@ import CodeBlock from "components/code-block.tsx";
 import { Flex } from "@chakra-ui/react";
 
 export const meta = {
-  slug: "work-experiences-for-members",
+  slug: "full-work-history-of-community-members",
   publishedAt: "2023-07-19T12:00",
-  title: "Get the full work experience for your members",
+  title: "View the full work history of your community members",
   headerImage:
     "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/c05aaeae-3788-4976-9271-b046f01f1cdb",
   mainPullRequest: 1087,
@@ -85,22 +85,18 @@ export const meta = {
   ],
 };
 
-We are working on our activity affiliations, with the end-goal to match each activity with the organization that performed it.
+This week, we released a much-improved work history view of your community members. Previously, we displayed current organizations your members belong to. However, this gave you no information about the start and end dates of their employement, as well as previous employers.
 
-Knowing which organizations did community activities will help you better categorize them. Since it will also work for historical activities, you will get an excellent signal for which companies have developers with the most interest in your community. This is crucial to uncover hidden sales opportunities.
-The first step for being able to perform activity affiliation is to understand the whole work experience of each community member.
+Knowing where and when a member worked at a given organization, can be very important for a number of reasons. Firstly, identifying heavily represented or new organizations that match your ideal customer profile is crucial for your DevTool growth strategy. Secondly, you may want to know which organization stood behind which activity of a community member. Did they always interact with your business while employed at Organization A, or was it partly at Organization B? Are they long-standing employees at an organization or new hires?
+Being able to answer these questions can help you better understand if, when, and how to reach out to a community member or an organization.
 
-### Work experience for members
+With our new update, the relationship between members and organizations is time-dependent. That means when you use our enrichment feature, you will see the whole employment history, including job titles and dates, in the organization’s field. You will also be able to edit this work experience manually if needed. As always, for enrichment to work, make sure your member has either an email or a GitHub profile linked.
 
-This week we focused on understanding and displaying the work experience of members, which is the first step to having proper activity affiliations.
+### Next Steps - Automatic organization-activity affiliation
 
-Until now, when our integrations or enrichment caught an organization for a member, they were automatically related in crowd.dev. However, this gave you no information about the start or end dates of their employment with the organization. We also did not know where the member worked before.
+Currently, you will still need to infer yourself, based on the displayed work history, which organization a community member belonged to when they performed an activity. However, soon we will automatically affiliate members' activities to the organization where they belonged to when the activity happened. This will be kept up to date as the member moves jobs or as we find out more information about them, giving you a complete picture of the activity of each organization in your community.
 
-This update has transformed the relationship between members and organizations to make it time-dependent. When you enrich a member, you will see their whole employment history, including job titles and dates, in the organization's field. You will also be able to edit this work experience manually.
-
-### Next steps
-
-Soon we will be to affiliate members' activities to the organization where they were active when the activity happened. This will be kept up to date as the member moves jobs or as we find out more information about them, giving you a complete picture of the activity of each organization in your community.
+Knowing which organizations did community activities will help you better categorize them. Since it will also work for historical activities, you will get an excellent signal for which companies have developers with the most interest in your community. This is crucial to uncover hidden sales opportunities. So keep your eyes peeled!
 
 ## Other Bug Fixes and Improvements
 
