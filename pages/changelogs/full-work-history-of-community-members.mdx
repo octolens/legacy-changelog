@@ -1,0 +1,127 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "full-work-history-of-community-members",
+  publishedAt: "2023-07-19T12:00",
+  title: "View the full work history of your community members",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/c05aaeae-3788-4976-9271-b046f01f1cdb",
+  mainPullRequest: 1087,
+  version: "v0.39.0",
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Dhruwang Jariwala",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/67850763?v=4",
+    },
+  ],
+};
+
+This week, we released a much-improved work history view of your community members. Previously, we displayed current organizations your members belong to. However, this gave you no information about the start and end dates of their employement, as well as previous employers.
+
+Knowing where and when a member worked at a given organization, can be very important for a number of reasons. Firstly, identifying heavily represented or new organizations that match your ideal customer profile is crucial for your DevTool growth strategy. Secondly, you may want to know which organization stood behind which activity of a community member. Did they always interact with your business while employed at Organization A, or was it partly at Organization B? Are they long-standing employees at an organization or new hires?
+Being able to answer these questions can help you better understand if, when, and how to reach out to a community member or an organization.
+
+With our new update, the relationship between members and organizations is time-dependent. That means when you use our enrichment feature, you will see the whole employment history, including job titles and dates, in the organization’s field. You will also be able to edit this work experience manually if needed. As always, for enrichment to work, make sure your member has either an email or a GitHub profile linked.
+
+### Next Steps - Automatic organization-activity affiliation
+
+Currently, you will still need to infer yourself, based on the displayed work history, which organization a community member belonged to when they performed an activity. However, soon we will automatically affiliate members' activities to the organization where they belonged to when the activity happened. This will be kept up to date as the member moves jobs or as we find out more information about them, giving you a complete picture of the activity of each organization in your community.
+
+Knowing which organizations did community activities will help you better categorize them. Since it will also work for historical activities, you will get an excellent signal for which companies have developers with the most interest in your community. This is crucial to uncover hidden sales opportunities. So keep your eyes peeled!
+
+## Other Bug Fixes and Improvements
+
+- Cleaned up filters code. <PullRequest number="1082"/>
+- Optimized the frontend speed in the members' page. <PullRequest number="1078"/>
+- Added a fallback for when the display name is empty. <PullRequest number="1105"/>
+- Explicitly fired automations in GitHub webhooks API. <PullRequest number="1108"/>
+- Made visible organizations with no members. <PullRequest number="984"/>
+- Created rows in `organizationSegments` when inserting employment history. <PullRequest number="1109"/>
+- Prevented empty values on `firstName` and `lastName` properties after OAuth authentication. <PullRequest number="1100"/>
+- Changed the SSO callback verification. <PullRequest number="1092"/>
+- Removed non-ASCII characters when getting sentiment. <PullRequest number="1124"/>
+- Fixed an undefined error in the StackOverflow integration. <PullRequest number="1095"/>
+- Fixed a broken link when clicking on sentiment. <PullRequest number="1129"/>
+- Fixed the custom reports widget settings. <PullRequest number="1126"/>
+- Fixed the merging of members through the _actions_ button. <PullRequest number="1122"/>
+- Checked null values in the emails list when showing merge suggestions. <PullRequest number="1118"/>
+- Fixed the invitation flow. <PullRequest number="1114"/>
+- Fixed member edit form. <PullRequest number="1106"/>
+- Prevented null values on `firstName` and `lastName` properties after OAuth authentication. <PullRequest number="1100"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
+
+;
