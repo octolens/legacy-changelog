@@ -1,0 +1,112 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "n8n-integration",
+  publishedAt: "2023-07-25T12:00",
+  title: "Automate your workflows with n8n",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/b4a3fec7-63fd-417e-860e-2741d7462e0b",
+  version: "v0.40.0",
+  mainPullRequest: 1167,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+We are thrilled to announce the crowd.dev n8n integration! This robust integration allows you to streamline your community workflows and integrate crowd.dev with a broad range of apps. This powerful tool can automate routine tasks and alert you to important events in your community. In the same way as our previously released Zapier integration, n8n offers a multitude of use cases.
+To start using the integration, access the Integration settings of the crowd.dev app and follow the steps to set up n8n.
+
+### Supported Triggers
+
+With this integration, you can set up two triggers: "New Activity" and "New Member." These triggers allow you to sync your community members to different CRM solutions, send a message to your Discord channel when a new member joins, notify you internally when negative sentiment activity occurs, send a welcome email to new members, and so much more!
+
+### Supported Actions
+
+The crowd.dev n8n integration includes various actions for Activities, Members, Organizations, Notes, and Tasks. With n8n, actions represent tasks that can be performed within your workflows. For instance, using the n8n integration, you can add activities and members to crowd.dev from different sources not supported directly by integrations.
+
+The n8n integration enables you complete control over your crowd.dev members, activities, and organizations, thus enabling you to put community management on autopilot. Additionally, you can create and destroy automation workflows and find, list, or update existing automations. See our [docs](https://docs.crowd.dev/docs/n8n-integration) for a complete list of the supported actions.
+
+Enhance your productivity, promote collaboration, and automate processes within your community with the crowd.dev n8n integration. We can't wait to see all the creative ways you'll use it, and we are eager to hear your feedback!
+
+## Other Bug Fixes and Improvements
+
+- Added support for negative filters to enhance the filtering functionality. <PullRequest number="720"/>
+- Enabled opening organizations in a new tab for better user experience. <PullRequest number="725"/>
+- Fixed an issue with deleting sample data on onboarding that prevented integration start. <PullRequest number="733"/>
+- Resolved the overwriting of members' joined date for Slack and Twitter integrations that was causing unrealistic spikes in members. <PullRequest number="729"/>
+- Fixed the displaying of certain activity types for more accurate representation. <PullRequest number="731"/>
+- Improved filtering in reports and list pages for better data analysis. <PullRequest number="730"/>
+- Corrected Discord threads to display the proper channel instead of the thread. <PullRequest number="726"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
