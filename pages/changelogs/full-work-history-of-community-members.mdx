@@ -100,23 +100,18 @@ Knowing which organizations did community activities will help you better catego
 
 ## Other Bug Fixes and Improvements
 
-- Cleaned up filters code. <PullRequest number="1082"/>
-- Optimized the frontend speed in the members' page. <PullRequest number="1078"/>
-- Added a fallback for when the display name is empty. <PullRequest number="1105"/>
-- Explicitly fired automations in GitHub webhooks API. <PullRequest number="1108"/>
-- Made visible organizations with no members. <PullRequest number="984"/>
-- Created rows in `organizationSegments` when inserting employment history. <PullRequest number="1109"/>
-- Prevented empty values on `firstName` and `lastName` properties after OAuth authentication. <PullRequest number="1100"/>
-- Changed the SSO callback verification. <PullRequest number="1092"/>
-- Removed non-ASCII characters when getting sentiment. <PullRequest number="1124"/>
-- Fixed an undefined error in the StackOverflow integration. <PullRequest number="1095"/>
-- Fixed a broken link when clicking on sentiment. <PullRequest number="1129"/>
-- Fixed the custom reports widget settings. <PullRequest number="1126"/>
-- Fixed the merging of members through the _actions_ button. <PullRequest number="1122"/>
-- Checked null values in the emails list when showing merge suggestions. <PullRequest number="1118"/>
-- Fixed the invitation flow. <PullRequest number="1114"/>
-- Fixed member edit form. <PullRequest number="1106"/>
-- Prevented null values on `firstName` and `lastName` properties after OAuth authentication. <PullRequest number="1100"/>
+- Supported non-empty array matches for emails. <PullRequest number="1147"/>
+- Added a start and end date to the primary key for the relation between members and organizations. <PullRequest number="1150"/>
+- Added a new script to process data streams for a tenant. <PullRequest number="1144"/>
+- Changed the copy in the "integration needs to be reconnected" banner. <PullRequest number="1136"/>
+- Fixed broken logic to edit tasks in bulk and refactored logic of the component. <PullRequest number="1137"/>
+- Fixed the automations form not being filled. <PullRequest number="1168"/>
+- Added Twitter to the automations platform list. <PullRequest number="1165"/>
+- Fixed several undefined errors in incoming data in the Github integration. <PullRequest number="1156"/>
+- Fixed the wrong stream type being sent for repos. <PullRequest number="1142"/>
+- Set `grandparentName` for subprojects when creating projects. <PullRequest number="1166"/>
+- Passed `segmentIds` to enrichment. <PullRequest number="1160"/>
+- Removed wildcards from replacements when searching segments by slug. <PullRequest number="1161"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
