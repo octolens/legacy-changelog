@@ -1,0 +1,113 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "hubspot-integration",
+  publishedAt: "2023-08-01T12:00",
+  title: "Sync your community data with Hubspot",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/b4a3fec7-63fd-417e-860e-2741d7462e0b",
+  version: "v0.40.0",
+  mainPullRequest: 1167,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+We are excited to announce the release of a highly anticipated feature - the ability to sync your community data with Hubspot. This integration will allow you to selectively sync members and organizations from your community to Hubspot, providing your sales team with the ability to harness the full potential of your community.
+
+## Send your community data to Hubspot
+
+If you send your community data to Hubspot, you can provide your go-to-market team with valuable insights. This integration allows them to receive qualified leads based on the data you provide. For example, if an organization has many active members in your community, it may be a promising commercial opportunity.
+
+With the Hubspot integration, you can automatically synchronize community data by applying specific criteria. This makes the process easier and enables you to filter and target the most relevant members for your marketing efforts. Some examples of specific criteria include a member who has completed more than ten activities, a member who has conducted a specific activity like opening a pull request, or a member who has a specific attribute like being a senior developer or a team lead.
+
+In addition, you can also enrich your existing Hubspot contacts with community data. This means that you can sync their identities from different platforms and the attributes you gather from integrations and enrichment.
+
+## Enrich your community members with Hubspot data
+
+Our integration works both ways, allowing you to enrich your community members and organizations with Hubspot data.
+
+By syncing contacts using email addresses, we can match Hubspot contacts with community members and enrich their data. The same process applies to organizations, where we match based on name.
+
+## Other Bug Fixes and Improvements
+
+- Added support for negative filters to enhance the filtering functionality. <PullRequest number="720"/>
+- Enabled opening organizations in a new tab for better user experience. <PullRequest number="725"/>
+- Fixed an issue with deleting sample data on onboarding that prevented integration start. <PullRequest number="733"/>
+- Resolved the overwriting of members' joined date for Slack and Twitter integrations that was causing unrealistic spikes in members. <PullRequest number="729"/>
+- Fixed the displaying of certain activity types for more accurate representation. <PullRequest number="731"/>
+- Improved filtering in reports and list pages for better data analysis. <PullRequest number="730"/>
+- Corrected Discord threads to display the proper channel instead of the thread. <PullRequest number="726"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
