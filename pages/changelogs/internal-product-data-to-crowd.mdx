@@ -104,16 +104,26 @@ this trial, feel free to [reach out to us](https://cal.com/team/CrowdDotDev/cust
 
 ## Other Bug Fixes and Improvements
 
-- Added a script for onboarding integrations using the new framework. <PullRequest number="1199"/>
-- Migrated the existing GitHub integration to the new framework. <PullRequest number="1170"/>
-- Added a new script for enriching members and organizations of a tenant. <PullRequest number="1107"/>
-- Included some missing pre-aggregations in Cube.js to address slow queries issue. <PullRequest number="1184"/>
-- Improved member merging by suggesting primary member based on identities and attributes. <PullRequest number="1190"/>
-- Fixed an issue causing weekly emails not being sent. <PullRequest number="1195"/>
-- Resolved an issue with weekly emails and Segments interaction. <PullRequest number="1193"/>
-- Prevented _falsy_ values from being included in member emails. <PullRequest number="1186"/>
-- Fixed a bug causing re-enrichment to duplicate work experiences, creating similar employments without dates. <PullRequest number="1185"/>
-- Fixed an error where an undefined name is fetched from the GitHub API. <PullRequest number="1196"/>
+- Optimized the integration tables. <PullRequest number="1205"/>
+- Added CI jobs for Integration sync worker for LFX. <PullRequest number="1201"/>
+- Modified Hubspot filter properties. <PullRequest number="1211"/>
+- Fixed switching of discord bots. <PullRequest number="1236"/>
+- Fixed members on organization page. <PullRequest number="1227"/>
+- Added support to bulk edit members attribute. <PullRequest number="1177"/>
+- Fixed reports timestamps issue. <PullRequest number="1222"/>
+- Fixed the merge member action on the members page. <PullRequest number="1217"/>
+- Corrected primary member selection logic in merge suggestions. <PullRequest number="1225"/>
+- Fixed the HubSpot identity and scale plan limitations issues. <PullRequest number="1213"/>
+- Fixed sending of empty data to Formbricks. <PullRequest number="1210"/>
+- Corrected HubSpot status on updating properties. <PullRequest number="1206"/>
+- Fixed handling of 'null' logins in GitHub webhooks. <PullRequest number="1229"/>
+- Fixed handling of 'null' members in GitHub webhooks. <PullRequest number="1226"/>
+- Fixed error with missing organizations in data-sink-worker. <PullRequest number="1216"/>
+- Fixed scale plan enrichment limit. <PullRequest number="1214"/>
+- Implemented small fixes for integration processing scripts. <PullRequest number="1202"/>
+- Reverted "send track events to crowd tenant". <PullRequest number="1207"/>
+- Added sending of analytics data to crowd team workspace. <PullRequest number="1203"/>
+- Fixed path to the docker context for python-worker. <PullRequest number="1204"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
