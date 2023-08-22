@@ -1,0 +1,134 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "understand-which-organizations-are-active",
+  publishedAt: "2023-08-22T12:00",
+  title: "Understand which organizations are active in your community",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/f61b48c1-89f3-460d-84e7-84946027c286",
+  version: "v0.43.0",
+  mainPullRequest: 1249,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+In the past weeks, we have spent much time and effort trying to nail the affiliations between activities and organizations. Today we are happy to announce very significant progress.
+
+Nailing this relation is important because having a correct affiliation is necessary for a clean signal of which organizations in your community might be more interested in your open-source offering.
+
+Until now, if a member of an organization did an activity, the activity was also associated with the organization, independently of any information we had about the member's work experience. But this is not always correct. What if the member switched workplaces? If John worked for Hooli until May 2023 and then moved to Pied Piper, his activities until May 2023 should be related to Hooli and then to Pied Piper. Since we released the ability to [view the entire work history of community members](https://changelog.crowd.dev/changelogs/full-work-history-of-community-members) some weeks ago, we now were able to build an affiliation system for activities and organizations based on these work experiences.
+
+### We cleaned up your organizations <PullRequest number="1340"/>
+When we released the employment history for members, the number of organizations we had multiplied, which caused the organizations' directory to get polluted with data that might not be relevant, such as organizations that never had any activity in your community. Having correct activity affiliations allowed us to clean this up. We filtered out all organizations with no activity and changed the sorting so you always get the organization that was last active first.
+
+### Improve the performance of the organizations' directory <PullRequest number="1328"/>
+The organizations' directory suffered from speed issues in the past weeks. We synced all the organization data to OpenSearch, just like we did for members, for fast loading times. Your organization experience should now be much snappier!
+
+### Next steps
+The correct affiliations, the improved performance, and the leaner and more targeted directory yielded a much better user experience for organizations. We plan to improve it further by allowing you to merge organizations and get merge suggestions in the next few weeks. We will also improve the enrichment we offer with more data points. Stay tuned!
+
+## Other Bug Fixes and Improvements
+
+Here is your changelog in the format you requested:
+
+- Improved searching by full name. <PullRequest number="1333"/>
+- Completed several fixes for organizations. <PullRequest number="1340"/>
+- Enhanced organization sorting in members’ page. <PullRequest number="1346"/>
+- Partitioned pre-aggregations for activities in Cube. <PullRequest number="1324"/>
+- Improved handling of organization affiliations in frontend. <PullRequest number="1250"/>
+- Increased search sync worker concurrency. <PullRequest number="1312"/>
+- Fixed script for manual enrichment of organizations. <PullRequest number="1252"/>
+- Added a script for granular reonboarding of GitHub repos. <PullRequest number="1223"/>
+- Fixed auto-assignation of member to organization based on email domain. <PullRequest number="1363"/>
+- Fixed bug removing enrichments from quote when not found. <PullRequest number="1316"/>
+- Fixed pagination for activities in organization profile. <PullRequest number="1362"/>
+- Added location attribute to organizations in OpenSearch. <PullRequest number="1360"/>
+- Several frontend performance fixes were implemented. <PullRequest number="1357"/>
+- Fixed indexing for organization addresses. <PullRequest number="1356"/>
+- Temporarily disabled sorting by name for members and organizations. <PullRequest number="1354"/>
+- Job title not required when updating member's work experience. <PullRequest number="1349"/>
+- Fixed timestamps in reports for all browsers. <PullRequest number="1348"/>
+- Organizations without activities will not be enriched. <PullRequest number="1347"/>
+- Adopted versioned indexes and improved full name search in OpenSearch. <PullRequest number="1179"/>
+- Fixed displayed active organization for each member. <PullRequest number="1321"/>
+- Fixed query for fetching organizations from frontend. <PullRequest number="1331"/>
+- Several performance improvements for worker speed. <PullRequest number="1327"/>
+- Updated sorting in the organization list. <PullRequest number="1320"/>
+- Refactored *Load more* button for activities and conversations. <PullRequest number="1310"/>
+- Fixed create organization modal. <PullRequest number="1313"/>
+- Gave priority to manual updates when updating OpenSearch. <PullRequest number="1212"/>
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
