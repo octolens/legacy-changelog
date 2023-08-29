@@ -1,0 +1,140 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "improvements-to-our-data-quality",
+  publishedAt: "2023-08-22T12:00",
+  title: "Get more reliable data with crowd.dev",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/f61b48c1-89f3-460d-84e7-84946027c286",
+  version: "v0.43.1",
+  mainPullRequest: 1375,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+  ],
+};
+
+This week we did a deep dive in the metrics and the data that crowd.dev shows. Having sound and complete data is crucial for you to get the value of crowd.dev,
+and we realised there were some areas of the product that were falling behind. We fixed most of them.
+
+## Correct metrics in home and reports
+
+Some widgets were showing the wrong data in the home dashboard and reports section.
+We went through all inconsistencies, and made sure everything was aligned.
+These metrics refresh every ten minutes, so if you see small inconsistencies it's due to the refresh period.
+
+## Only show active members in an organziation's profile
+
+Up until now, an organization's profile showed all the memebrs that had ever been a part of that organization,
+even if that organization had never done any activity in your community.
+We switched it to only show a member in the organization's profile if they are currently active in the organization.
+This gives you more accurate information.
+
+## Performance optimizations for integrations
+
+Last week we found ourselves having to ingest a lot of data through integrations, and we hit a bottleneck.
+We spent the week optimizing, making sure every single query that is made when ingesting data was efficient,
+and that the database could handle the load.
+The result is a much faster and performant integration framework, and thus more consistent and reliable data for you.
+
+## Other Bug Fixes and Improvements
+
+- Improved searching by full name. <PullRequest number="1333"/>
+- Completed several fixes for organizations. <PullRequest number="1340"/>
+- Enhanced organization sorting in members’ page. <PullRequest number="1346"/>
+- Partitioned pre-aggregations for activities in Cube. <PullRequest number="1324"/>
+- Improved handling of organization affiliations in frontend. <PullRequest number="1250"/>
+- Increased search sync worker concurrency. <PullRequest number="1312"/>
+- Fixed script for manual enrichment of organizations. <PullRequest number="1252"/>
+- Added a script for granular reonboarding of GitHub repos. <PullRequest number="1223"/>
+- Fixed auto-assignation of member to organization based on email domain. <PullRequest number="1363"/>
+- Fixed bug removing enrichments from quote when not found. <PullRequest number="1316"/>
+- Fixed pagination for activities in organization profile. <PullRequest number="1362"/>
+- Added location attribute to organizations in OpenSearch. <PullRequest number="1360"/>
+- Several frontend performance fixes were implemented. <PullRequest number="1357"/>
+- Fixed indexing for organization addresses. <PullRequest number="1356"/>
+- Temporarily disabled sorting by name for members and organizations. <PullRequest number="1354"/>
+- Job title not required when updating member's work experience. <PullRequest number="1349"/>
+- Fixed timestamps in reports for all browsers. <PullRequest number="1348"/>
+- Organizations without activities will not be enriched. <PullRequest number="1347"/>
+- Adopted versioned indexes and improved full name search in OpenSearch. <PullRequest number="1179"/>
+- Fixed displayed active organization for each member. <PullRequest number="1321"/>
+- Fixed query for fetching organizations from frontend. <PullRequest number="1331"/>
+- Several performance improvements for worker speed. <PullRequest number="1327"/>
+- Updated sorting in the organization list. <PullRequest number="1320"/>
+- Refactored *Load more* button for activities and conversations. <PullRequest number="1310"/>
+- Fixed create organization modal. <PullRequest number="1313"/>
+- Gave priority to manual updates when updating OpenSearch. <PullRequest number="1212"/>
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
