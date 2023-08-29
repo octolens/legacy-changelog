@@ -109,32 +109,11 @@ When you create members and organizations manually, even if they do not have any
 
 ## Other Bug Fixes and Improvements
 
-- Improved searching by full name. <PullRequest number="1333"/>
-- Completed several fixes for organizations. <PullRequest number="1340"/>
-- Enhanced organization sorting in members’ page. <PullRequest number="1346"/>
-- Partitioned pre-aggregations for activities in Cube. <PullRequest number="1324"/>
-- Improved handling of organization affiliations in frontend. <PullRequest number="1250"/>
-- Increased search sync worker concurrency. <PullRequest number="1312"/>
-- Fixed script for manual enrichment of organizations. <PullRequest number="1252"/>
-- Added a script for granular reonboarding of GitHub repos. <PullRequest number="1223"/>
-- Fixed auto-assignation of member to organization based on email domain. <PullRequest number="1363"/>
-- Fixed bug removing enrichments from quote when not found. <PullRequest number="1316"/>
-- Fixed pagination for activities in organization profile. <PullRequest number="1362"/>
-- Added location attribute to organizations in OpenSearch. <PullRequest number="1360"/>
-- Several frontend performance fixes were implemented. <PullRequest number="1357"/>
-- Fixed indexing for organization addresses. <PullRequest number="1356"/>
-- Temporarily disabled sorting by name for members and organizations. <PullRequest number="1354"/>
-- Job title not required when updating member's work experience. <PullRequest number="1349"/>
-- Fixed timestamps in reports for all browsers. <PullRequest number="1348"/>
-- Organizations without activities will not be enriched. <PullRequest number="1347"/>
-- Adopted versioned indexes and improved full name search in OpenSearch. <PullRequest number="1179"/>
-- Fixed displayed active organization for each member. <PullRequest number="1321"/>
-- Fixed query for fetching organizations from frontend. <PullRequest number="1331"/>
-- Several performance improvements for worker speed. <PullRequest number="1327"/>
-- Updated sorting in the organization list. <PullRequest number="1320"/>
-- Refactored *Load more* button for activities and conversations. <PullRequest number="1310"/>
-- Fixed create organization modal. <PullRequest number="1313"/>
-- Gave priority to manual updates when updating OpenSearch. <PullRequest number="1212"/>
+Support versioned index and improve name search. <PullRequest number="1378"/>
+Consistent timestamps throughout the app. <PullRequest number="1375"/>
+Process events without deduplication ID. <PullRequest number="1385"/>
+Increased performance when ingesting data. <PullRequest number="1380"/>
+Prevent unnecessary name updates when ingesting data. <PullRequest number="1372"/>
 
 
 export default ({ children, ...rest }) => (
