@@ -101,25 +101,28 @@ These updates will make the Slack notifications much more readable so you can ex
 
 ## Other Bug Fixes and Improvements
 
-- No longer overriding manual changes for members' affiliations to organizations. <PullRequest number="1444"/>
-- Enforcing TypeScript for the configuration of organization enrichment. <PullRequest number="1467"/>
-- Added last synced information to integrations. <PullRequest number="1416"/>
-- Added a modal to the GitHub integration that alerts the user they should be an admin. <PullRequest number="1434"/>
-- Added a multi-select filter in the organizations page for Headcount. <PullRequest number="1433"/>
-- Added a text-based filter in the members page for Job title. <PullRequest number="1438"/>
-- Added a tooltip to improve the user experience for negative filters. <PullRequest number="1437"/>
-- Added a text-based filter on the members page for members' names. <PullRequest number="1427"/>
-- Improved database locks and upserts in the database sync worker. <PullRequest number="1451"/>
-- Optimized organization cache updates. <PullRequest number="1445"/>
-- Added mutex locks to the data-sink-worker. <PullRequest number="1439"/>
-- Added a fallback in org affiliation when there are no dates. <PullRequest number="1436"/>
-- Fixed the script to ensure it continues running stuck integrations. <PullRequest number="1426"/>
-- Added logs to the `process-webhook` script. <PullRequest number="1460"/>
-- Obtained GitHub unstar events. <PullRequest number="1464"/>
-- Added the ability to process webhooks based on ID. <PullRequest number="1466"/>
-- Fixed the creation of parent and grandparent segments for members and organizations. <PullRequest number="1443"/>
-- Fixed fetching organization data aggregates when segments are enabled. <PullRequest number="1420"/>
-- Fixed the filtering of members by organization ID. <PullRequest number="1425"/>
+- Retry when there is a DNS error in SQS. <PullRequest number="1511"/>
+- Add script for mapping individual members to organizations. <PullRequest number="1509"/>
+- Remove old organization enrichment. <PullRequest number="1504"/>
+- Re-add missing indexes. <PullRequest number="1500"/>
+- Optimize how we handle activity channels for segments. <PullRequest number="1505"/>
+- Add a script to assign a member to an organization based on an email. <PullRequest number="1463"/>
+- Bump Cube.js Docker image. <PullRequest number="1489"/>
+- Add multi-select capabilities on filters in the activities list. <PullRequest number="1441"/>
+- Add a tooltip for truncated emails in the member profile. <PullRequest number="1476"/>
+- Added performance fixes for Segments. <PullRequest number="1485"/>
+- Set outdated integrations to a _needs reconnect_ state. <PullRequest number="1474"/>
+- Better syncs in the HubSpot integration. <PullRequest number="1512"/>
+- Removed the processing state for integration streams. <PullRequest number="1488"/>
+- Fixed some errors in the HubSpot integration and added better error handling. <PullRequest number="1503"/>
+- Improved the performance of finding one organization by ID. <PullRequest number="1499"/>
+- Fixed how we manage identities on the frontend. <PullRequest number="1493"/>
+- Fix the profile links for StackOverflow. <PullRequest number="1462"/>
+- Fix how we render custom platforms in the organizations' directory. <PullRequest number="1482"/>
+- Fix 404s in the Discord integration. <PullRequest number="1475"/>
+- Fix types import for attributes in the frontend. <PullRequest number="1471"/>
+- Get the GitHub token when processing webhooks. <PullRequest number="1469"/>
+- Don't throw errors when the Discord channel is not found. <PullRequest number="1470"/>
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
