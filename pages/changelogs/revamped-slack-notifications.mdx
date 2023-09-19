@@ -1,0 +1,131 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "revamped-slack-notifications",
+  publishedAt: "2023-09-19T12:00",
+  title: "Revamped Slack  Notifications",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/76368076-c27f-4400-a94d-07e954f9bf04",
+  version: "v0.45.1",
+  mainPullRequest: 1492,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Product lead",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Loïc Saint-Roch",
+      description: "Software engineer",
+      avatarUrl: "https://avatars.githubusercontent.com/u/2212354?v=4"
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Emmanuel Raymond",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/23735423?v=4",
+    },
+  ],
+};
+
+Many of us spend a lot of time on Slack and use it as our real-time messaging and notification system. This makes it an ideal place to stay in the loop for the most important developer activities or signals in your community. Our crowd.dev Slack notifications enable just that, but they needed a bit of love. This week, we introduced a fresh design for Slack notifications that is much cleaner and more informative.
+
+For new developers in your community, we will show a beautiful display of the job title and organization, reach, location, email, engagement level, and the platforms they are active on. You will also have clear links to the profile in crowd.dev and GitHub and their profile picture. You have everything needed to craft a nice welcome message or dig a little deeper to see whether they or their organization fit your ICP.
+
+For new activities, we will show a clear display of the activity type and any content in the activity. You will also get the same information as the member who did the activity.
+
+We are excited for you to experience these revamped notifications and act on them! Let us know what you think or if you have any further needs we can cover. We will be busy working on more notification and automation types for you as well. 
+
+
+## Other Bug Fixes and Improvements
+
+- Retry when there is a DNS error in SQS. <PullRequest number="1511"/>
+- Add script for mapping individual members to organizations. <PullRequest number="1509"/>
+- Remove old organization enrichment. <PullRequest number="1504"/>
+- Re-add missing indexes. <PullRequest number="1500"/>
+- Optimize how we handle activity channels for segments. <PullRequest number="1505"/>
+- Add a script to assign a member to an organization based on an email. <PullRequest number="1463"/>
+- Bump Cube.js Docker image. <PullRequest number="1489"/>
+- Add multi-select capabilities on filters in the activities list. <PullRequest number="1441"/>
+- Add a tooltip for truncated emails in the member profile. <PullRequest number="1476"/>
+- Added performance fixes for Segments. <PullRequest number="1485"/>
+- Set outdated integrations to a _needs reconnect_ state. <PullRequest number="1474"/>
+- Better syncs in the HubSpot integration. <PullRequest number="1512"/>
+- Removed the processing state for integration streams. <PullRequest number="1488"/>
+- Fixed some errors in the HubSpot integration and added better error handling. <PullRequest number="1503"/>
+- Improved the performance of finding one organization by ID. <PullRequest number="1499"/>
+- Fixed how we manage identities on the frontend. <PullRequest number="1493"/>
+- Fix the profile links for StackOverflow. <PullRequest number="1462"/>
+- Fix how we render custom platforms in the organizations' directory. <PullRequest number="1482"/>
+- Fix 404s in the Discord integration. <PullRequest number="1475"/>
+- Fix types import for attributes in the frontend. <PullRequest number="1471"/>
+- Get the GitHub token when processing webhooks. <PullRequest number="1469"/>
+- Don't throw errors when the Discord channel is not found. <PullRequest number="1470"/>
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
