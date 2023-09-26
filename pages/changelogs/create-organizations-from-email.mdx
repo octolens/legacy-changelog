@@ -1,0 +1,130 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "create-organizations-from-email",
+  publishedAt: "2023-09-26T12:00",
+  title: "Create new organizations from a members' email",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/1b8b7345-dacc-4a06-9fc8-0ba1fe203c51",
+  version: "v0.45.2",
+  mainPullRequest: 1510,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Product lead",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Loïc Saint-Roch",
+      description: "Software engineer",
+      avatarUrl: "https://avatars.githubusercontent.com/u/2212354?v=4"
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Emmanuel Raymond",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/23735423?v=4",
+    },
+  ],
+};
+
+We often get the email addresses of members. When we detect that the email address belongs to an existing organization in your community, we affiliate the member to the organization. Until now, when the organization did not exist, we did nothing.
+
+Now, we will create it and affiliate the member to the organization, and new members with the same email domain will also be linked. The number of members that belong to organizations will increase, and the potential for enriching organizations becomes even higher, thus taking one more step in getting the most out of your data.
+
+
+## Problems with integrations and stability
+
+Lately, we have been suffering from some stability and data issues. We are working internally to address those and preparing long-term changes to leave them behind for good.
+
+We are finishing the last planning touches, and you will hear from us next week with proper communication about the causes of the issues, the solution, and our goals. 
+
+
+## Other Bug Fixes and Improvements
+
+- Added custom date ranges to custom reports. <PullRequest number="1536"/>
+- Implemented synchronous stream processing in HubSpot. <PullRequest number="1538"/>
+- Normalized the website column. <PullRequest number="1481"/>
+- Enhanced logging for frontend. <PullRequest number="1518"/>
+- Updated the documentation for listing conversations. <PullRequest number="1459"/>
+- Implemented duplicate organization prevention mechanism. <PullRequest number="1514"/>
+- Changed the default reports template. <PullRequest number="1491"/>
+- Fixed inconsistency issue with emails in the members' list. <PullRequest number="1479"/>
+- Enhanced organization domain retrieval by not sanitizing URLs that don't start with HTTP. <PullRequest number="1540"/>
+- Optimized the throttler for the HubSpot integration. <PullRequest number="1533"/>
+- Ensured only one member is found by e-mail, even if there are more when enriching. <PullRequest number="1539"/>
+- Imposed stricter throttler options for HubSpot. <PullRequest number="1532"/>
+- Discarded organizations without a name when getting contact associations. <PullRequest number="1531"/>
+- Utilized throttler while fetching Hubspot contact associations. <PullRequest number="1529"/>
+- Updated the `updatedAt` timestamp after an integration check. <PullRequest number="1525"/>
+- Fixed bugs found in the integrations. <PullRequest number="1527"/>
+- Fixed error related to member without suggestions. <PullRequest number="1526"/>
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
