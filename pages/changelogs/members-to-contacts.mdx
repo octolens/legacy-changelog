@@ -1,0 +1,177 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+import VideoPlayer from "components/video-player.tsx";
+import CenteredImage from "components/centered-image.tsx";
+import PullRequest from "components/pull-request.tsx";
+import CodeBlock from "components/code-block.tsx";
+import { Flex } from "@chakra-ui/react";
+
+export const meta = {
+  slug: "members-to-contacts",
+  publishedAt: "2023-10-10T12:00",
+  title: "Members are now contacts, discontinuing our Growth Plan, and introducing a new onboarding flow",
+  headerImage:
+    "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/2a16af31-a2a7-4441-8e51-5f74e5ab96bb",
+  version: "v0.46.0",
+  mainPullRequest: 1621,
+  authors: [
+    {
+      name: "Nuno Eufrasio",
+      description: "Product Designer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e14b8d3cc48f74b0_Nuno_Photo.webp",
+    },
+    {
+      name: "Joana Maia",
+      description: "Product lead",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a135404fcf6ef2cb3b737_Joana_Photo.webp",
+    },
+    {
+      name: "Gasper Grom",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U04MTRJJTN1-d72a3890dc6c-512",
+    },
+    {
+      name: "Anil Bostanci",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c53145a79ec1dde_Anil_Photo.webp",
+    },
+    {
+      name: "Uroš Marlot",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13546c1c8eb957c0f597_Uros_Photo.webp",
+    },
+    {
+      name: "Misha Savelyev",
+      description: "Software engineer",
+      avatarUrl: "https://ca.slack-edge.com/T01NM6QG1C4-U05745U0MPE-f4ae6ec344bc-512",
+    },
+    {
+      name: "Loïc Saint-Roch",
+      description: "Software engineer",
+      avatarUrl: "https://avatars.githubusercontent.com/u/2212354?v=4"
+    },
+    {
+      name: "Igor Kotua",
+      description: "Software engineer",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354e448c91d9696fda8_Igor_Photo.webp",
+    },
+    {
+      name: "Yeganathan S",
+      description: "Software engineering intern",
+      avatarUrl: "https://avatars.githubusercontent.com/u/63534555?v=4",
+    },
+    {
+      name: "Charlotte Schmitt",
+      description: "Chief of Staff",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a1354fd6f246cb97defc2_Charlotte_Photo.webp",
+    },
+    {
+      name: "Jonathan Reimer",
+      description: "CEO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a0cdabefa0c385d6bff53_Jonathan_Photo.webp",
+    },
+    {
+      name: "Joan Reyero",
+      description: "CTO",
+      avatarUrl:
+        "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
+    },
+    {
+      name: "Emmanuel Raymond",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/23735423?v=4",
+    },
+    {
+      name: "Jobayer Ahmed",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/26854413?v=4",
+    },
+    {
+      name: "Abdurrahman Rajab",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/18273833?v=4",
+    },
+    {
+      name: "Shashank Patil",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/115841059?v=4",
+    },
+    {
+      name: "Pradumn Kumar",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/47187878?v=4",
+    },
+  ],
+};
+
+Community members in crowd.dev are now contacts. Currently,, crowd.dev is evolving from supporting only community data to becoming a holistic developer data platform that will include product and telemetry data, amongst others. That means you will not just be seeing community members in crowd.dev, you will also have users, customers, leads... Therefore it’s time for a more inclusive term: contacts. This week, we have refactored the UI to reflect this change. Functionality is still the same; only words have changed. You’ll now see new and active contacts in your home dashboard and a Contacts page for example. 
+
+We made sure your old links and notifications work, however, the API is still using members as the naming. We will make this switch soon. Additionally, we are also working on changing the terminology accross our visuals, docs, and website in the next few days. Please bare with us as we go through the transition. 
+
+
+## We discontinued our Growth plan in favour of Scale <PullRequest number="1618"/>
+
+We have taken the next step in our product evolution and will discontinue our Growth plan in favor of Scale. While we were still adding to our product funtionality and serving mostly early adopters, it made sense to have a very low priced plan. Now, as crowd.dev has evolved massively since the beginning of the year and to be able to maximize the value we can offer our customers its no longer feasible for us to offer Growth. 
+
+Our existing Growth customers will be able to continue using their plan as is, but we will not be offering it to new ones. This week, we shipped the relevant changes to the app to reflect this. We changed the calls to action and pricing pages and deprecated the reverse trial logic. 
+
+Our Scale plan is now here to support your developer focused go-to-market. It includes automatic data enrichment for contacts and organizations, a two-way hubspot sync, and much more for $950 a month. To get a trial of everything that Scale offers, please [contact us](https://cal.com/team/CrowdDotDev/custom-plan?date=2023-10-12&month=2023-10)! 
+
+<CenteredImage src="https://user-images.githubusercontent.com/37874460/229734259-c35c249a-7e0d-4ed4-811f-798c003d8e02.png" maxWidth="100%" />
+
+
+## A new onboarding flow with more focus on integrations <PullRequest number="1578"/>
+
+In our user research, we realized that customers who connect at least 1 data source quickly feel the value crowd.dev has to offer and keep coming back. However, our old onboarding didn’t facilitate this step enough, and too many users never connected a data source.
+
+We have therefore re-designed our onboarding flow to draw more attention to and make it easier to add a data source.  Once you see all the data populate our dashboard with organizations, contacts, and activities getting displayed - you can really get started. 
+
+
+<CenteredImage src="https://github.com/CrowdDotDev/crowd.dev/assets/37874460/790f0cb6-a456-490f-8c45-364d7eb1fb90" maxWidth="100%" />
+
+
+## Other Bug Fixes and Improvements
+
+- New organization attributes in list, filters, and HubSpot automations. <PullRequest number="1519"/>
+- Organization merge suggestion improvements. <PullRequest number="1649"/>
+- Update automations limitation logic for new pricing plans. <PullRequest number="1641"/>
+- Update Feature Flags for new plans. <PullRequest number="1622"/>
+- Pricing pages and paywalls. <PullRequest number="1627"/>
+- Added a function to fetch active organizations in the last year. <PullRequest number="1630"/>
+- Merge organizations with the same website. <PullRequest number="1553"/>
+- Only show a preview of the Headline in organizations list. <PullRequest number="1610"/>
+- Added a table of contents to Readme.md. <PullRequest number="1623"/>
+- Exclude bots from automations. <PullRequest number="1414"/>
+- Redirect people to the signup page when they are not signed in. <PullRequest number="1561"/>
+- Added time frame granularity to `url`s for reports. <PullRequest number="1452"/>
+- Update OctoKit. <PullRequest number="1616"/>
+- Add incremental checks to Discord integration. <PullRequest number="1612"/>
+- Don't try to parse Discord channels that are not accessible. <PullRequest number="1568"/>
+- Fix analytics user identification. <PullRequest number="1654"/>
+- Fix widget number icon. <PullRequest number="1650"/>
+- Fix the invitation flow. <PullRequest number="1644"/>
+- Fix invite issue for logged-in users. <PullRequest number="1643"/>
+- Fix links for members to contacts. <PullRequest number="1638"/>
+- Auto merge organization on website conflict during enrichment. <PullRequest number="1633"/>
+- Organization findById optimization. <PullRequest number="1575"/>
+- Fix activities and conversations pagination. <PullRequest number="1558"/>
+- Fix autocomplete many input. <PullRequest number="1555"/>
+- Fix the form page freezing for large datasets. <PullRequest number="1554"/>
+- Prevent tooltips from staying too long. <PullRequest number="1530"/>
+- Implement personal token rotation for GitHub when we hit rate limits. <PullRequest number="1625"/>
+- Check that the email domain is defined when assigning organizations. <PullRequest number="1637"/>
+- Several integration reliability fixes. <PullRequest numbers="1609,1607,1606,1603"/>
+- Simplify the organization autocomplete query for performance. <PullRequest number="1574"/>
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
