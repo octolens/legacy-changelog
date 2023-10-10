@@ -8,7 +8,7 @@ import { Flex } from "@chakra-ui/react";
 export const meta = {
   slug: "members-to-contacts",
   publishedAt: "2023-10-10T12:00",
-  title: "Members are now contacts, and a new onboarding pricing and onboarding flow",
+  title: "Members are now contacts, discontinuing our Growth Plan, and introducing a new onboarding flow",
   headerImage:
     "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/2a16af31-a2a7-4441-8e51-5f74e5ab96bb",
   version: "v0.46.0",
@@ -110,23 +110,28 @@ export const meta = {
   ],
 };
 
-Community members in crowd.dev are now contacts! In the following months, crowd.dev will evolve from supporting only community data to a holistic data platform that will include product and telemetry data, amongst others.
-Then you will not just be seeing members in crowd.dev, you will have users, customers, leads... It was time for a more inclusive term: contacts. This week, we have refactored the UI to reflect this change. Functionality is still the same; only words changed.
+Community members in crowd.dev are now contacts. Currently,, crowd.dev is evolving from supporting only community data to becoming a holistic developer data platform that will include product and telemetry data, amongst others. That means you will not just be seeing community members in crowd.dev, you will also have users, customers, leads... Therefore it’s time for a more inclusive term: contacts. This week, we have refactored the UI to reflect this change. Functionality is still the same; only words have changed. You’ll now see new and active contacts in your home dashboard and a Contacts page for example. 
 
-We also made sure your old links and notifications work. However, the API is still using members as the naming. We will make this switch soon.
+We made sure your old links and notifications work, however, the API is still using members as the naming. We will make this switch soon. Additionally, we are also working on changing the terminology accross our visuals, docs, and website in the next few days. Please bare with us as we go through the transition. 
 
-## We dropped _Growth_ in favour of _Scale_ <PullRequest number="1618"/>
 
-Last month, we decided to stop offering the _Growth_ plan in favor of _Scale_ to maximize the value we can offer our customers (existing _Growth_ customers will be grandfathered). This week, we shipped the relevant changes to the app to reflect this. We changed the calls to action and pricing pages and deprecated the reverse trial logic. To get a trial of everything that _Scale_ offers, please [contact us](https://cal.com/team/CrowdDotDev/custom-plan?date=2023-10-12&month=2023-10)! 
+## We discontinued our Growth plan in favour of Scale <PullRequest number="1618"/>
+
+We have taken the next step in our product evolution and will discontinue our Growth plan in favor of Scale. While we were still adding to our product funtionality and serving mostly early adopters, it made sense to have a very low priced plan. Now, as crowd.dev has evolved massively since the beginning of the year and to be able to maximize the value we can offer our customers its no longer feasible for us to offer Growth. 
+
+Our existing Growth customers will be able to continue using their plan as is, but we will not be offering it to new ones. This week, we shipped the relevant changes to the app to reflect this. We changed the calls to action and pricing pages and deprecated the reverse trial logic. 
+
+Our Scale plan is now here to support your developer focused go-to-market. It includes automatic data enrichment for contacts and organizations, a two-way hubspot sync, and much more for $950 a month. To get a trial of everything that Scale offers, please [contact us](https://cal.com/team/CrowdDotDev/custom-plan?date=2023-10-12&month=2023-10)! 
 
 <CenteredImage src="https://user-images.githubusercontent.com/37874460/229734259-c35c249a-7e0d-4ed4-811f-798c003d8e02.png" maxWidth="100%" />
 
 
-## Whole new onboarding with more focus on integrations <PullRequest number="1578"/>
+## A new onboarding flow with more focus on integrations <PullRequest number="1578"/>
 
-In our user research, we realized that customers who connect at least data sources get the value of crowd.dev easily and activated quickly. However, our old onboarding needed more attention to integrations, and several users never connected a data source.
+In our user research, we realized that customers who connect at least 1 data source quickly feel the value crowd.dev has to offer and keep coming back. However, our old onboarding didn’t facilitate this step enough, and too many users never connected a data source.
 
-We have re-designed it to make it clear to the user that connecting an integration is vital to get crowd.dev's value, and we improved the user experience.
+We have therefore re-designed our onboarding flow to draw more attention to and make it easier to add a data source.  Once you see all the data populate our dashboard with organizations, contacts, and activities getting displayed - you can really get started. 
+
 
 <CenteredImage src="https://github.com/CrowdDotDev/crowd.dev/assets/37874460/790f0cb6-a456-490f-8c45-364d7eb1fb90" maxWidth="100%" />
 
