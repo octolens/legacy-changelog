@@ -8,7 +8,7 @@ import { Flex } from "@chakra-ui/react";
 export const meta = {
   slug: "organizations-merge-suggestions",
   publishedAt: "2023-10-17T12:00",
-  title: "Get merge suggestions for duplicate organizations",
+  title: "Merge suggestions for duplicate organizations",
   headerImage:
     "https://github.com/CrowdDotDev/crowd.dev/assets/37874460/f47633dc-3714-4903-8c2a-b90f46544590",
   version: "v0.47.0",
@@ -95,16 +95,14 @@ export const meta = {
   ],
 };
 
-Some weeks ago, we released the ability to merge repeated organizations. However, that still required a lot of manual effort because
-it required our users to identify the potential duplicates themselves. Now, crowd.dev will automatically detect potential duplicates
+Some weeks ago, we released the ability to merge duplicate organizations. However, that still required manual effort because it meant  users had to identify the potential duplicates themselves. Now, crowd.dev will automatically detect potential duplicates
 and suggest them to you for merging.
 
-We detect potential duplicates by comparing similarities between organizations' names and identities on different platforms.
-If we notice that two organizations are similar, we will detect them as potential merge candidates.
+We detect potential duplicates by comparing similarities between organizations' names and identities on different platforms. If we notice that two organizations are similar, we will detect them as merge candidates.
+
 In addition, we will compute a confidence score based on how similar both organizations are, which should help you decide if the organizations should be merged.
 
-For now, merging two organizations is a non-reversible action. Soon, we will introduce the ability to revert these merges and with it, the ability to merge organizations
-automatically. Stay tuned!
+For now, merging two organizations is a non-reversible action. Soon, we will introduce the ability to revert these merges. Additionally, we will also be releasing automatic merges, so stay tuned! 
 
 
 ## Other Bug Fixes and Improvements
