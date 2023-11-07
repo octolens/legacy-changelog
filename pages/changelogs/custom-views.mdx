@@ -81,7 +81,23 @@ export const meta = {
       description: "CTO",
       avatarUrl:
         "https://uploads-ssl.webflow.com/635150609746eee5c60c4aac/635a13549c5314621dec1ddf_Joan_Photo.webp",
-    }
+    },
+    {
+      name: "Arcturus22",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/99889376?v=4"
+    },
+    {
+      name: "Priyanshu Prajapati",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/98478305?v=4"
+    },
+    {
+      name: "Debajoti Chakraborty",
+      description: "External contributor",
+      avatarUrl: "https://avatars.githubusercontent.com/u/99889376?v=4"
+    },
+
     
   ],
 };
@@ -114,43 +130,20 @@ We hope you get value from creating your own views and sharing them with the tea
 
 ## Other Bug Fixes and Improvements
 
-- Extended query timeout for refreshing materialized views. <PullRequest number="1770"/>
-- Ensured organizations maintain their existing website during integration updates. <PullRequest number="1760"/>
-- Set the organization's display name based on work experiences and enrichment details. <PullRequest number="1666"/>
-- Updated automation limitations. <PullRequest number="1728"/>
-- Enhanced performance of custom reports. <PullRequest number="1676"/>
-- Batched activity updates when merging organizations. <PullRequest number="1714"/>
-- Enhanced performance on the lists page. <PullRequest number="1734"/>
-- Updated CONTRIBUTING.md file. <PullRequest number="1750"/>
-- Added a link in the documentation leading to the crowd.dev blogs. <PullRequest number="1735"/>
-- Updated Docs with a new URL. <PullRequest number="1727"/>
-- Removed the loading animation. <PullRequest number="1626"/>
-- Trimmed the query string on all pages with search functionality. <PullRequest number="1703"/>
-- Added a member link in the toast message following member creation. <PullRequest number="1681"/>
-- Improved archetypes dependencies and PostgreSQL handling. <PullRequest number="1763"/>
-- Implemented improvements to tracing system. <PullRequest number="1725"/>
-- Updated the pull request template. <PullRequest number="1711"/>
-- Fixed a typo in README.md file. <PullRequest number="1660"/>
-- Configured timeouts for Postgres connections in the API. <PullRequest number="1713"/>
-- Fixed the bug in the enriched filter for organizations. <PullRequest number="1759"/>
-- Corrected the primary organization during the merging process. <PullRequest number="1754"/>
-- Disabled bot settings when filtering team members. <PullRequest number="1743"/>
-- Fixed issues with the organization model. <PullRequest number="1700"/>
-- Fixed errors when Discord channels were not available. <PullRequest number="1767"/>
-- Fixed activity filters on the member page. <PullRequest number="1682"/>
-- Fixed a bug in `lastProcessedAt` for integrations that receive data via webhooks. <PullRequest number="1757"/>
-- Checked `deletedAt` when finding mutually exclusive organization members while merging. <PullRequest number="1756"/>
-- Removed rate limiter in the Reddit integration. <PullRequest number="1741"/>
-- Removed rate limiters in the Discord integration. <PullRequest number="1739"/>
-- Reverted to the original view for search sync, removing materialized view. <PullRequest number="1737"/>
-- Fixed issues with the number of items per page in the Discord integration. <PullRequest number="1733"/>
-- Adjusted the sleeping time in a rate limiter. <PullRequest number="1732"/>
-- Updated configuration specifications for the Discord integration. <PullRequest number="1731"/>
-- Adjusted rate limit configuration for Discord. <PullRequest number="1730"/>
-- Increased requests and fixed rate limiter for the Discord integration. <PullRequest number="1729"/>
-- Improved error handling processes for Discord. <PullRequest number="1726"/>
-- Added a rate limit checker to the Discord integration. <PullRequest number="1722"/>
-- Fixed the script for installing libraries. <PullRequest number="1717"/>
+- Migrated Discourse integration to a new framework. <PullRequest number="1778"/>
+- Optimized GitHub integration for better performance. <PullRequest number="1796"/>
+- Transitioned Twitter integration to the latest framework. <PullRequest number="1744"/>
+- Enhanced the Contributing guidelines to aid new contributors. <PullRequest number="1777"/>
+- Improved the README documentation for better clarity. <PullRequest number="1718"/>
+- Updated the README with the latest project information. <PullRequest number="1774"/>
+- Resolved issues with aggregate functions on the contact page. <PullRequest number="1818"/>
+- Fixed inconsistencies in tracking validation checks. <PullRequest number="1802"/>
+- Updated integration logic to preserve organization website if it exists. <PullRequest number="1798"/>
+- Ensured the organization's cache is updated correctly by verifying payload names. <PullRequest number="1792"/>
+- Added a missing tasks button and corrected task routing paths. <PullRequest number="1794"/>
+- Increased database reinitialization timeout for materialized view refresh jobs. <PullRequest number="1791"/>
+- Gracefully handled errors during the materialized view refresh process. <PullRequest number="1787"/>
+- Fixed a merging error related to contact tags. <PullRequest number="1784"/>
 
 
 export default ({ children, ...rest }) => (
